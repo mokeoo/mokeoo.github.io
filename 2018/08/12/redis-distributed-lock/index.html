@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言  Redis分布式锁其实网上已经一大把了，我写这篇博客的目的是想发表下自己的浅见。   我们知道在单进程中，通过语言内置的锁可以保证数据的一致性，随着软件的不断扩大，很多应用已经是多进程的方式部署,那么为了保证数据的一致性,我们需要一个分布式锁。标题说的是Redis分布式锁，那么我下面主要讲的rendis锁，而且不会涉及到redis单点故障的问题。 常见的分布锁  搜索一下常见的分布式锁">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重谈redis分布式锁">
+<meta property="og:url" content="https://youkale.github.io/2018/08/12/redis-distributed-lock/index.html">
+<meta property="og:site_name" content="一直在路上">
+<meta property="og:description" content="前言  Redis分布式锁其实网上已经一大把了，我写这篇博客的目的是想发表下自己的浅见。   我们知道在单进程中，通过语言内置的锁可以保证数据的一致性，随着软件的不断扩大，很多应用已经是多进程的方式部署,那么为了保证数据的一致性,我们需要一个分布式锁。标题说的是Redis分布式锁，那么我下面主要讲的rendis锁，而且不会涉及到redis单点故障的问题。 常见的分布锁  搜索一下常见的分布式锁">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-12T11:05:03.288Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重谈redis分布式锁">
+<meta name="twitter:description" content="前言  Redis分布式锁其实网上已经一大把了，我写这篇博客的目的是想发表下自己的浅见。   我们知道在单进程中，通过语言内置的锁可以保证数据的一致性，随着软件的不断扩大，很多应用已经是多进程的方式部署,那么为了保证数据的一致性,我们需要一个分布式锁。标题说的是Redis分布式锁，那么我下面主要讲的rendis锁，而且不会涉及到redis单点故障的问题。 常见的分布锁  搜索一下常见的分布式锁">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://youkale.github.io/2018/08/12/redis-distributed-lock/"/>
+
+
+
+
+
+  <title>重谈redis分布式锁 | 一直在路上</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一直在路上</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/08/12/redis-distributed-lock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">重谈redis分布式锁</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-12T16:58:39+08:00">
+                2018-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/12/redis-distributed-lock/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/12/redis-distributed-lock/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/12/redis-distributed-lock/" class="leancloud_visitors" data-flag-title="重谈redis分布式锁">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  Redis分布式锁其实网上已经一大把了，我写这篇博客的目的是想发表下自己的浅见。</p>
+<p>  我们知道在单进程中，通过语言内置的锁可以保证数据的一致性，随着软件的不断扩大，很多应用已经是多进程的方式部署,那么为了保证数据的一致性,我们需要一个分布式锁。标题说的是Redis分布式锁，那么我下面主要讲的rendis锁，而且不会涉及到redis单点故障的问题。</p>
+<h3 id="常见的分布锁"><a href="#常见的分布锁" class="headerlink" title="常见的分布锁"></a>常见的分布锁</h3><p>  搜索一下常见的分布式锁说的都是通过redis和zookeeper来实现。</p>
+<ul>
+<li><p>redis</p>
+<blockquote>
+<p>setnx 通过设置一个共有的key，而且通过设置过期时间来避免死锁</p>
+</blockquote>
+</li>
+<li><p>zk</p>
+<blockquote>
+<p>通过设置一个共有的节点,通过zk的watch,观察节点的变化进行通知</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="锁的需求"><a href="#锁的需求" class="headerlink" title="锁的需求"></a>锁的需求</h3><ul>
+<li><p>独占: 一个时间点只能一个线程访问</p>
+</li>
+<li><p>可重入: 同一个线程只要当前持有锁，可以重复进入</p>
+</li>
+<li><p>避免死锁: 多个线程访问不会出现死锁的情况</p>
+</li>
+<li><p>锁释放: 进程故障能自动释放锁，只有持有锁的进程能释放锁</p>
+</li>
+</ul>
+<h3 id="尝试自己实现一个"><a href="#尝试自己实现一个" class="headerlink" title="尝试自己实现一个"></a>尝试自己实现一个</h3><blockquote>
+<p>实现 copy from importnew <a href="http://www.importnew.com/27477.html" target="_blank" rel="noopener">Redis 分布式锁的正确实现方式（ Java 版 ）</a></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class RedisTool &#123;</span><br><span class="line"> </span><br><span class="line">    private static final String LOCK_SUCCESS = <span class="string">"OK"</span>;</span><br><span class="line">    private static final String SET_IF_NOT_EXIST = <span class="string">"NX"</span>;</span><br><span class="line">    private static final String SET_WITH_EXPIRE_TIME = <span class="string">"PX"</span>;</span><br><span class="line"> </span><br><span class="line">    public static boolean tryGetDistributedLock(Jedis jedis, String lockKey, String requestId, int expireTime) &#123;</span><br><span class="line"> </span><br><span class="line">        String result = jedis.set(lockKey, requestId, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (LOCK_SUCCESS.equals(result)) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static final Long RELEASE_SUCCESS = 1L;</span><br><span class="line"> </span><br><span class="line">    public static boolean releaseDistributedLock(Jedis jedis, String lockKey, String requestId) &#123;</span><br><span class="line"> </span><br><span class="line">        String script = <span class="string">"if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end"</span>;</span><br><span class="line">        Object result = jedis.eval(script, Collections.singletonList(lockKey), Collections.singletonList(requestId));</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (RELEASE_SUCCESS.equals(result)) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>上面的锁实现存在一个问题,假如程序员A不小心调用了releaseDistributedLock就会把某个已经持有锁的线程的锁释放掉。相信大家都能想到用ThreadLocal方式避免给未持有锁的线程释放了。 那我就试着将这代码改改。(伪代码)</p>
+</blockquote>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"> public class RedisToolv2 &#123;</span><br><span class="line"> </span><br><span class="line">    private static final String LOCK_SUCCESS = <span class="string">"OK"</span>;</span><br><span class="line">    private static final String SET_IF_NOT_EXIST = <span class="string">"NX"</span>;</span><br><span class="line">    private static final String SET_WITH_EXPIRE_TIME = <span class="string">"PX"</span>;</span><br><span class="line">    private final ThreadLocal&lt;Boolean&gt; hasLock = new ThreadLocal&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    public static boolean tryGetDistributedLock(Jedis jedis, String lockKey, String requestId, int expireTime) &#123;</span><br><span class="line"> </span><br><span class="line">        String result = jedis.set(lockKey, requestId, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);</span><br><span class="line">        </span><br><span class="line">        boolean locked = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (LOCK_SUCCESS.equals(result)) &#123;</span><br><span class="line">            locked = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        hasLock.set(locked);</span><br><span class="line">        <span class="built_in">return</span> locked;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static final Long RELEASE_SUCCESS = 1L;</span><br><span class="line"> </span><br><span class="line">    public static boolean releaseDistributedLock(Jedis jedis, String lockKey, String requestId) &#123;</span><br><span class="line">        boolean locked = Optional.ofNull(hasLock.get()).orElse(<span class="literal">false</span>) ;</span><br><span class="line">        boolean unloked = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(locked)&#123;</span><br><span class="line">            String script = <span class="string">"if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end"</span>;</span><br><span class="line">            Object result = jedis.eval(script, Collections.singletonList(lockKey), Collections.singletonList(requestId));</span><br><span class="line">            <span class="keyword">if</span> (RELEASE_SUCCESS.equals(result)) &#123;</span><br><span class="line">                unloked = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p> 上面的方式虽然说解决了其他线程误删锁的情况，但是分布式锁其实还有很多细节都地方需要实现，当一个线程已经拥有此锁了，如果还有大量其他(本应用或其他应用)的线程在请求锁，无疑给redis造成很大的压力(当然这个得看应用的规模，小规模是不会出现这个情况)。</p>
+<blockquote>
+<p>假设我们同一个应用中同一个时间点只有线程在请求分布式锁，那么相对于Redis的压力是不是就会下降很多? 那么我们在代码中加入一个同步锁是不是就解决了问题呢？首先我想到的是synchronized可以重入，可以使用递归的方式调用。但是如果是递归，如果长时间拿不到锁，那么有可能会引发StackOverflowError。额， 那这不能实现，没招了咩？ 其实jdk里面带了一个 ReentrantLock,这个锁其实跟synchronized差不多，也是可以重入的，而且有一个 tryLock(long timeout, TimeUnit unit)的方法，在递归调用的时候可以避免Stack过大。 （思路有了，我相信代码也是很轻易就写出来了）</p>
+</blockquote>
+<h3 id="抛个砖"><a href="#抛个砖" class="headerlink" title="抛个砖"></a>抛个砖</h3><ul>
+<li><p>那么这个锁持有的时间该如何计算呢？ </p>
+</li>
+<li><p>还有就是这么实现这个锁是不是就完美了呢？？  </p>
+</li>
+<li><p>Redis有个叫<a href="http://redisdoc.com/topic/notification.html" target="_blank" rel="noopener">键空间通知(keyspace notification)</a> 的功能，是不是可以用这种方式来实现一个类似zookeeper的锁呢 ？ </p>
+</li>
+</ul>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>各位看官还有什么好的思路欢迎来交流呀。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/13/url-Value-cast-struct/" rel="next" title="url.Values转换struct">
+                <i class="fa fa-chevron-left"></i> url.Values转换struct
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/24/vim-学习笔记/" rel="prev" title="vim 学习笔记(持续更新)">
+                vim 学习笔记(持续更新) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">低端程序员</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的分布锁"><span class="nav-number">2.</span> <span class="nav-text">常见的分布锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#锁的需求"><span class="nav-number">3.</span> <span class="nav-text">锁的需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尝试自己实现一个"><span class="nav-number">4.</span> <span class="nav-text">尝试自己实现一个</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抛个砖"><span class="nav-number">5.</span> <span class="nav-text">抛个砖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">6.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">低端程序员</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'KQiw4J2UPV5z9nPzDQAP5rdm-gzGzoHsz',
+        appKey: 'xqkat1FmaGnX5LEiFQwYlsf3',
+        placeholder: '说点什么...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'20' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.6.js"></script>
+  <script>AV.initialize("KQiw4J2UPV5z9nPzDQAP5rdm-gzGzoHsz", "xqkat1FmaGnX5LEiFQwYlsf3");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
