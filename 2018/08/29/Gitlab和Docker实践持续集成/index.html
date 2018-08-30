@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="golang," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="前言大家在写golang http服务的时候或许会碰到Request中url.Values转换成struct的需要。 思路翻开net.url查看url.Values的定义 1type Values map[string][]string  那么我是不是可以通过遍历struct的Field获取对应的数据类型，以及通过tag来从url.Values中获取对应的参数？答案是可以的，那么我们就开动吧。">
-<meta name="keywords" content="golang">
+<meta name="description" content="前言 本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?  打包 上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: win">
 <meta property="og:type" content="article">
-<meta property="og:title" content="url.Values转换struct">
-<meta property="og:url" content="https://youkale.github.io/2018/01/13/url-Value-cast-struct/index.html">
+<meta property="og:title" content="Gitlab和Docker实践持续集成">
+<meta property="og:url" content="https://youkale.github.io/2018/08/29/Gitlab和Docker实践持续集成/index.html">
 <meta property="og:site_name" content="一直在路上">
-<meta property="og:description" content="前言大家在写golang http服务的时候或许会碰到Request中url.Values转换成struct的需要。 思路翻开net.url查看url.Values的定义 1type Values map[string][]string  那么我是不是可以通过遍历struct的Field获取对应的数据类型，以及通过tag来从url.Values中获取对应的参数？答案是可以的，那么我们就开动吧。">
+<meta property="og:description" content="前言 本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?  打包 上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: win">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-11T15:42:39.946Z">
+<meta property="og:updated_time" content="2018-08-30T14:46:53.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="url.Values转换struct">
-<meta name="twitter:description" content="前言大家在写golang http服务的时候或许会碰到Request中url.Values转换成struct的需要。 思路翻开net.url查看url.Values的定义 1type Values map[string][]string  那么我是不是可以通过遍历struct的Field获取对应的数据类型，以及通过tag来从url.Values中获取对应的参数？答案是可以的，那么我们就开动吧。">
+<meta name="twitter:title" content="Gitlab和Docker实践持续集成">
+<meta name="twitter:description" content="前言 本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?  打包 上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: win">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://youkale.github.io/2018/01/13/url-Value-cast-struct/"/>
+  <link rel="canonical" href="https://youkale.github.io/2018/08/29/Gitlab和Docker实践持续集成/"/>
 
 
 
 
 
-  <title>url.Values转换struct | 一直在路上</title>
+  <title>Gitlab和Docker实践持续集成 | 一直在路上</title>
   
 
 
@@ -243,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/01/13/url-Value-cast-struct/">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/08/29/Gitlab和Docker实践持续集成/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="低端程序员">
@@ -260,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">url.Values转换struct</h1>
+          <h1 class="post-title" itemprop="name headline">Gitlab和Docker实践持续集成</h1>
         
 
         <div class="post-meta">
@@ -272,8 +271,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T15:36:00+08:00">
-                2018-01-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-29T10:45:37+08:00">
+                2018-08-29
               </time>
             
 
@@ -291,8 +290,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/13/url-Value-cast-struct/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/13/url-Value-cast-struct/" itemprop="commentCount"></span>
+                <a href="/2018/08/29/Gitlab和Docker实践持续集成/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/29/Gitlab和Docker实践持续集成/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -300,7 +299,7 @@
 
           
           
-             <span id="/2018/01/13/url-Value-cast-struct/" class="leancloud_visitors" data-flag-title="url.Values转换struct">
+             <span id="/2018/08/29/Gitlab和Docker实践持续集成/" class="leancloud_visitors" data-flag-title="Gitlab和Docker实践持续集成">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -331,28 +330,96 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>大家在写golang http服务的时候或许会碰到Request中url.Values转换成struct的需要。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>翻开net.url查看url.Values的定义</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> Values map[string][]string</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>那么我是不是可以通过遍历struct的Field获取对应的数据类型，以及通过tag来从url.Values中获取对应的参数？<br>答案是可以的，那么我们就开动吧。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?</p>
 </blockquote>
-<ul>
-<li>先来定义一个struct,还有一个叫param的tag。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> User struct &#123;</span><br><span class="line">     UserId int  `param:<span class="string">"user_id,100"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>struct说明</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字段名:  UserId</span><br><span class="line">url.Values中的字段名:  user_id</span><br><span class="line">默认值: 100</span><br></pre></td></tr></table></figure>
-<ul>
-<li>实现</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    typ := val.Type()</span><br><span class="line">	<span class="keyword">for</span> i := 0; i &lt; val.NumField(); i++ &#123;</span><br><span class="line">		kt := typ.Field(i) //获取字段类型</span><br><span class="line">		tag := kt.Tag.Get(<span class="string">"param"</span>) //获取tag</span><br><span class="line">                sv := val.Field(i) //获取字段值</span><br><span class="line">		uv := getVal(values, tag) //获取默认值</span><br><span class="line">               switch sv.<span class="function"><span class="title">Kind</span></span>() &#123;</span><br><span class="line">		<span class="keyword">case</span> reflect.String:</span><br><span class="line">			....</span><br><span class="line">		<span class="keyword">case</span> reflect.Bool:</span><br><span class="line">		        ....</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goos: linux</span><br><span class="line">goarch: amd64</span><br><span class="line">pkg: github.com/youkale/go-querystruct/params</span><br><span class="line">2000000000	         0.00 ns/op</span><br><span class="line">PASS</span><br></pre></td></tr></table></figure>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>好了，思路基本上是这样的,具体实现细节请参考</p>
-<p><a href="https://github.com/youkale/go-querystruct" target="_blank" rel="noopener">GitHub源码地址</a> </p>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><blockquote>
+<p>上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: windows常见的zip,rar,msi等; Linux常见的rpm,deb等; mac常见的dmg等;java语言的有jar,war包等; 然而多种的打包形式,依赖的环境不一样,每种包也只能是在特定的环境下才能使用,这其实对运维也是一种挑战. 那么有没有一种包是各个平台都可以用，而且不用去关心目标机器环境的呢? 答案就是: docker,下面我们就结合docker,进行化自动化打包, 缩短各个职能间沟通的成本.</p>
+</blockquote>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><pre><code>Gitlab: 代码仓库, 构建工具(pipeline)
+Nexus:  maven仓库, docker register (新版Gitlab已经包含Registery)
+Docker: 容器
+Webhook: 自己写的 [Github] (https://github.com/youkale/gitlab-webhook)
+</code></pre><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><pre><code>                                        3
+                           +-----------------------------+
+                           |                             |
+                           |                             |
++---------+   1     +------v-------+            +--------+------+
+|         |         |              |     2      |               |
+|  Coder  +---------&gt;    Gitlab    +------------&gt; Gitlab Runner |
+|         |         |              |            |               |
++---------+         +---^----+-----+            +--------+------+
+                        |    |                           |
+                        |    |                           |
+                        |    |  +-----------------+      | 4
+                        |    |  |                 |      |
+                        |    |  | Docker Registry &lt;------+
+                        |    |  |                 |
+                        |   5|  +-------^---------+
+                       7|    |          |
+                        |    |          | 6
+                        |    |  +-------+---------+
+                        |    |  |                 |
+                        |    +--&gt; Target Server   |
+                        |       |                 |
+                        |       +-------+---------+
+                        |               |
+                        +---------------+
 
+1. 程序员push代码到gitlab，(1)
+2. Gitlab将任务分配给GitRunner，可以根据配置将执行结果(jar,js等)upload到gitlab或是打包docker镜像push到docker仓库. 也可以根据分支,tag指定构建 (2,3,4)
+3. 执行完毕后会将发送一个构建事件到你注册的Webhook里. (5)
+4. 目标服务器会装有webhook根据Gitlab事件信息拉取docker镜像,也可以从Gitlab拉去config文件或者其他的Artifacts. (6,7)
+</code></pre><blockquote>
+<p>大致的流程就是这样,Gitlab可以将各个环节需要用的Token，通过环境变量的形式添加到运行配置里面(.gitlab-ci.yml),从而避免了密钥泄露的情况.看完里这个，也许大家会在想，这个其实跟我们常用的jenkins差不多嘛，其实我安利gitlab的原因是它的一系列访问api、pipeline、webhook、artifacts、docker支持、用户友好、k8s的支持也很好.</p>
+</blockquote>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><pre><code>构建前需要准备Docker基础镜像,比如java的maven依赖镜像,golang的GOPATH镜像,js的node基础镜像
+下面java工程我用的就是maven:3.5.2-jdk-8-alpine这个镜像
+</code></pre><h2 id="构建java工程"><a href="#构建java工程" class="headerlink" title="构建java工程"></a>构建java工程</h2><pre><code>image: docker.youkale.com:18443/docker:17.12.1-ce
+services:
+  - docker.youkale.com:18443/docker:dind
+stages:
+  - build
+  - package
+variables:
+  api_version: 1.0.8-api-release
+api-build:
+  image: docker.youkale.com:18443/maven:3.5.2-jdk-8-alpine
+  stage: build
+  script:
+    - ./mvnw clean package spring-boot:repackage -DskipTests=true
+  artifacts:
+    name: &quot;$CI_JOB_NAME&quot;
+    expire_in: 1 weeks
+    paths:
+      - target/api.jar
+api-package:
+  stage: package
+  script:
+  - &quot;docker build -t docker.youkale.com:18442/api:${api_version} ./api&quot;
+  - &quot;docker login -u gitlab-ci -p ${nexus_docker_password} docker.youkale.com:18442&quot;
+  - &quot;docker push docker.youkale.com:18442/api:${api_version}&quot;
+
+说明:
+    image: 执行本次构建使用的image
+    stages: 执行本次构建的顺序, build,package
+    variables: 环境变量
+    api-build: 自定义构建名称,会定义构建的策略.上传到artifacts会以这个命名.同样的webhook收到的事件也会包含此构建的名字,以及其他git相关的信息.我们根据这个信息进行应用的部署.
+    ${nexus_docker_password}: 通过gitlab在运行的时候设置
+</code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code>webhook配置: https://raw.githubusercontent.com/youkale/gitlab-webhook/master/README.md
+nexus docker仓库配置: 难度倒是没有，需要(hosted,proxy,group), 但是还是走了不少弯路，比如docker login有问题等,不过最后也还是解决了.
+gitlab-runner: Settings -&gt; CI/CD -&gt; Runners
+gitlab-webhook: Settings -&gt; Integrations
+分支、tag保护: Settings -&gt; Repository
+</code></pre><blockquote>
+<p>gitlab构建部分的功能基本说说完了,每个地方还有不少细节,当我们实际用到的时候，我们可以结合gitlab详细的文档进行参考配置.</p>
+</blockquote>
+<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><pre><code>1. private-token问题:
+当使用官方gitlab的时候private-token在头部，而且全部大写，当使用gitlab-ce版的时候，private-token为首字母大写Private-Token(没记错的话)
+例子: curl -XGET -L --header \&quot;PRIVATE-TOKEN: ${gitlab_artifact_token}\&quot; &apos;https://gitlab.com/youkale/kakaka/-/jobs/artifacts/master/raw/dist/index.html?job=node-build&apos; -o src/main/resources/templates/index.html
+2. 用这种模式构建，java工程的话不太推荐父子工程(本人主要用java)，当两个子工程都需要构建的时候，会不太舒服，虽然说这个方案也行
+</code></pre><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><pre><code>通过这种方式，我想开发乐呵呵，测试乐呵呵，运维乐呵呵. 大家都不用那么痛苦了.
+</code></pre>
       
     </div>
     
@@ -367,12 +434,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/golang/" rel="tag"># golang</a>
-          
-        </div>
-      
 
       
       
@@ -382,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/20/Array-memory-allocation/" rel="next" title="数组内存分配">
-                <i class="fa fa-chevron-left"></i> 数组内存分配
+              <a href="/2018/08/26/IntelliJ IDEA的Tips贼好用/" rel="next" title="IntelliJ IDEA的Tips贼好用">
+                <i class="fa fa-chevron-left"></i> IntelliJ IDEA的Tips贼好用
               </a>
             
           </div>
@@ -391,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/12/redis-distributed-lock/" rel="prev" title="重谈redis分布式锁">
-                重谈redis分布式锁 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能测试"><span class="nav-number">3.</span> <span class="nav-text">性能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#打包"><span class="nav-number">1.1.</span> <span class="nav-text">打包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用工具"><span class="nav-number">1.2.</span> <span class="nav-text">使用工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本流程"><span class="nav-number">1.3.</span> <span class="nav-text">基本流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.4.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建java工程"><span class="nav-number">1.5.</span> <span class="nav-text">构建java工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.6.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑"><span class="nav-number">1.7.</span> <span class="nav-text">坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">1.8.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></div>
             
 
           </div>
