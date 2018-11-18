@@ -239,7 +239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/11/18/由js精度缺失引发的问题/">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/11/18/由js精度缺失引发的问题及处理方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="低端程序员">
@@ -258,7 +258,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/18/由js精度缺失引发的问题/" itemprop="url">由js精度缺失引发的思考</a></h1>
+                <a class="post-title-link" href="/2018/11/18/由js精度缺失引发的问题及处理方法/" itemprop="url">由js精度缺失引发的问题及处理方法</a></h1>
         
 
         <div class="post-meta">
@@ -289,8 +289,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/18/由js精度缺失引发的问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/18/由js精度缺失引发的问题/" itemprop="commentCount"></span>
+                <a href="/2018/11/18/由js精度缺失引发的问题及处理方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/18/由js精度缺失引发的问题及处理方法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -298,7 +298,7 @@
 
           
           
-             <span id="/2018/11/18/由js精度缺失引发的问题/" class="leancloud_visitors" data-flag-title="由js精度缺失引发的思考">
+             <span id="/2018/11/18/由js精度缺失引发的问题及处理方法/" class="leancloud_visitors" data-flag-title="由js精度缺失引发的问题及处理方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -331,7 +331,122 @@
       
         
           
-            
+            <h1 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h1><pre><code>在使用java的Long类型过程中,当这个Long类型数值超过 1^0+1^1+1^2+...1^58的范围后就会引发精度丢失, 详见JS[IEEE754规范](https://en.wikipedia.org/wiki/IEEE_754)
+常见的现象就是比如:1000967854800048128,通过js转换成Number类型成为了:1000967854800048100, 由此会引发一系列问题,比如当年著名的爱国者导弹.
+因为精度缺失造成问题,大多数情况发生在前后端交互过程中,那么下面就分别说说处理方法
+</code></pre><h2 id="普通场景的处理方法"><a href="#普通场景的处理方法" class="headerlink" title="普通场景的处理方法"></a>普通场景的处理方法</h2><blockquote>
+<p>简单的处理方法，jackson,gson等json工具包已经包含了Long类型处理方法了,基本上都是转String.</p>
+</blockquote>
+<h3 id="gson处理方法"><a href="#gson处理方法" class="headerlink" title="gson处理方法"></a>gson处理方法</h3><pre><code>GsonBuilder builder = new GsonBuilder();
+//默认将所有的Long转换成String
+builder.setLongSerializationPolicy(LongSerializationPolicy.STRING);
+</code></pre><h3 id="jackson处理方法"><a href="#jackson处理方法" class="headerlink" title="jackson处理方法"></a>jackson处理方法</h3><pre><code>ObjectMapper objectMapper = new ObjectMapper();
+SimpleModule module = new SimpleModule();
+module.addSerializer(Long.class, ToStringSerializer.instance);
+module.addSerializer(Long.TYPE, ToStringSerializer.instance);
+</code></pre><h2 id="高级场景处理"><a href="#高级场景处理" class="headerlink" title="高级场景处理"></a>高级场景处理</h2><blockquote>
+<p>为了避免将其他无需转换成String的Long类型转换,这里提供一个高级的用法，<br>思路很简单就是定义一个Id类型,通过实现Id类型的序列化和反序列化功能即可进行实现.<br>下面就用Gson和jackson来演示</p>
+</blockquote>
+<h3 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h3><pre><code>//Gson
+GsonBuilder builder = new GsonBuilder();
+builder.registerTypeAdapter(Id.class, (JsonSerializer&lt;Id&gt;) (src, typeOfSrc, context) -&gt;
+        new JsonPrimitive(src.getVal()));
+builder.registerTypeAdapter(Id.class, (JsonDeserializer&lt;Id&gt;) (json, typeOfT, context) -&gt;
+        new Id(json.getAsLong()));
+Gson gson = builder.create();
+User user = new User();
+user.setUserId(new Id(11111L));
+user.setUserName(&quot;youkale.github.io&quot;);
+
+String s = gson.toJson(user);
+System.out.println(s);
+
+User user1 = gson.fromJson(s, User.class);
+System.out.println(&quot;gson  &quot; + user1);
+
+//Jackson
+ObjectMapper objectMapper = new ObjectMapper();
+SimpleModule module = new SimpleModule();
+module.addSerializer(Id.class, new IdJacksonSerializer(Id.class));
+module.addDeserializer(Id.class, new IdJacksonDeserializer(Id.class));
+objectMapper.registerModule(module);
+String s1 = objectMapper.writeValueAsString(user);
+System.out.println(s1);
+User user2 = objectMapper.readValue(s1, User.class);
+System.out.println(&quot;jackson  &quot; + user2);
+</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><pre><code>通过自定义类型
+</code></pre><h3 id="定义类User"><a href="#定义类User" class="headerlink" title="定义类User"></a>定义类User</h3><pre><code>public static class User {
+
+    private Id userId;
+
+    private String userName;
+
+    public Id getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Id userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;User{&quot; +
+                &quot;userId=&quot; + userId +
+                &quot;, userName=&apos;&quot; + userName + &apos;\&apos;&apos; +
+                &apos;}&apos;;
+    }
+}
+</code></pre><h3 id="定义Id类"><a href="#定义Id类" class="headerlink" title="定义Id类"></a>定义Id类</h3><pre><code>public static class Id {
+
+    private final Long val;
+
+    public Long getVal() {
+        return val;
+    }
+
+    public Id(Long val) {
+        this.val = val;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(val);
+    }
+}
+</code></pre><h3 id="jackson序列反序列实现"><a href="#jackson序列反序列实现" class="headerlink" title="jackson序列反序列实现"></a>jackson序列反序列实现</h3><pre><code>public static class IdJacksonDeserializer extends StdDeserializer&lt;Id&gt; {
+    public IdJacksonDeserializer(Class&lt;?&gt; vc) {
+        super(vc);
+    }
+
+    @Override
+    public Id deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+        return new Id(p.getValueAsLong());
+    }
+}
+
+public static class IdJacksonSerializer extends StdSerializer&lt;Id&gt; {
+
+    public IdJacksonSerializer(Class&lt;Id&gt; t) {
+        super(t);
+    }
+    @Override
+    public void serialize(Id value, JsonGenerator gen, SerializerProvider provider) throws IOException {
+        gen.writeString(String.valueOf(value.getVal()));
+    }
+}
+</code></pre><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote>
+<p>从Gson和jackson的API看出这类的功能老早就由大神们想到了,有时候总在感叹,自己多渺小.</p>
+</blockquote>
+
           
         
       

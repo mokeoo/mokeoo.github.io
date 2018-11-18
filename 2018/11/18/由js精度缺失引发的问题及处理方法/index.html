@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="前言 本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?  打包 上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: win">
+<meta name="description" content="问题场景在使用java的Long类型过程中,当这个Long类型数值超过 1^0+1^1+1^2+...1^58的范围后就会引发精度丢失, 详见JS[IEEE754规范](https://en.wikipedia.org/wiki/IEEE_754) 常见的现象就是比如:1000967854800048128,通过js转换成Number类型成为了:1000967854800048100, 由此会引发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gitlab和Docker实践持续集成">
-<meta property="og:url" content="https://youkale.github.io/2018/08/29/Gitlab和Docker实践持续集成/index.html">
+<meta property="og:title" content="由js精度缺失引发的问题及处理方法">
+<meta property="og:url" content="https://youkale.github.io/2018/11/18/由js精度缺失引发的问题及处理方法/index.html">
 <meta property="og:site_name" content="一直在路上">
-<meta property="og:description" content="前言 本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?  打包 上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: win">
+<meta property="og:description" content="问题场景在使用java的Long类型过程中,当这个Long类型数值超过 1^0+1^1+1^2+...1^58的范围后就会引发精度丢失, 详见JS[IEEE754规范](https://en.wikipedia.org/wiki/IEEE_754) 常见的现象就是比如:1000967854800048128,通过js转换成Number类型成为了:1000967854800048100, 由此会引发">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-30T15:00:43.451Z">
+<meta property="og:updated_time" content="2018-11-18T04:53:03.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gitlab和Docker实践持续集成">
-<meta name="twitter:description" content="前言 本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?  打包 上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: win">
+<meta name="twitter:title" content="由js精度缺失引发的问题及处理方法">
+<meta name="twitter:description" content="问题场景在使用java的Long类型过程中,当这个Long类型数值超过 1^0+1^1+1^2+...1^58的范围后就会引发精度丢失, 详见JS[IEEE754规范](https://en.wikipedia.org/wiki/IEEE_754) 常见的现象就是比如:1000967854800048128,通过js转换成Number类型成为了:1000967854800048100, 由此会引发">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://youkale.github.io/2018/08/29/Gitlab和Docker实践持续集成/"/>
+  <link rel="canonical" href="https://youkale.github.io/2018/11/18/由js精度缺失引发的问题及处理方法/"/>
 
 
 
 
 
-  <title>Gitlab和Docker实践持续集成 | 一直在路上</title>
+  <title>由js精度缺失引发的问题及处理方法 | 一直在路上</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/08/29/Gitlab和Docker实践持续集成/">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/11/18/由js精度缺失引发的问题及处理方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="低端程序员">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Gitlab和Docker实践持续集成</h1>
+          <h1 class="post-title" itemprop="name headline">由js精度缺失引发的问题及处理方法</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-29T10:45:37+08:00">
-                2018-08-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-18T12:10:54+08:00">
+                2018-11-18
               </time>
             
 
@@ -290,8 +290,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/29/Gitlab和Docker实践持续集成/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/29/Gitlab和Docker实践持续集成/" itemprop="commentCount"></span>
+                <a href="/2018/11/18/由js精度缺失引发的问题及处理方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/18/由js精度缺失引发的问题及处理方法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -299,7 +299,7 @@
 
           
           
-             <span id="/2018/08/29/Gitlab和Docker实践持续集成/" class="leancloud_visitors" data-flag-title="Gitlab和Docker实践持续集成">
+             <span id="/2018/11/18/由js精度缺失引发的问题及处理方法/" class="leancloud_visitors" data-flag-title="由js精度缺失引发的问题及处理方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -330,99 +330,120 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?</p>
+        <h1 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h1><pre><code>在使用java的Long类型过程中,当这个Long类型数值超过 1^0+1^1+1^2+...1^58的范围后就会引发精度丢失, 详见JS[IEEE754规范](https://en.wikipedia.org/wiki/IEEE_754)
+常见的现象就是比如:1000967854800048128,通过js转换成Number类型成为了:1000967854800048100, 由此会引发一系列问题,比如当年著名的爱国者导弹.
+因为精度缺失造成问题,大多数情况发生在前后端交互过程中,那么下面就分别说说处理方法
+</code></pre><h2 id="普通场景的处理方法"><a href="#普通场景的处理方法" class="headerlink" title="普通场景的处理方法"></a>普通场景的处理方法</h2><blockquote>
+<p>简单的处理方法，jackson,gson等json工具包已经包含了Long类型处理方法了,基本上都是转String.</p>
 </blockquote>
-<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><blockquote>
-<p>上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: windows常见的zip,rar,msi等; Linux常见的rpm,deb等; mac常见的dmg等;java语言的有jar,war包等; 然而多种的打包形式,依赖的环境不一样,每种包也只能是在特定的环境下才能使用,这其实对运维也是一种挑战. 那么有没有一种包是各个平台都可以用，而且不用去关心目标机器环境的呢? 答案就是: docker,下面我们就结合docker,进行化自动化打包, 缩短各个职能间沟通的成本.</p>
+<h3 id="gson处理方法"><a href="#gson处理方法" class="headerlink" title="gson处理方法"></a>gson处理方法</h3><pre><code>GsonBuilder builder = new GsonBuilder();
+//默认将所有的Long转换成String
+builder.setLongSerializationPolicy(LongSerializationPolicy.STRING);
+</code></pre><h3 id="jackson处理方法"><a href="#jackson处理方法" class="headerlink" title="jackson处理方法"></a>jackson处理方法</h3><pre><code>ObjectMapper objectMapper = new ObjectMapper();
+SimpleModule module = new SimpleModule();
+module.addSerializer(Long.class, ToStringSerializer.instance);
+module.addSerializer(Long.TYPE, ToStringSerializer.instance);
+</code></pre><h2 id="高级场景处理"><a href="#高级场景处理" class="headerlink" title="高级场景处理"></a>高级场景处理</h2><blockquote>
+<p>为了避免将其他无需转换成String的Long类型转换,这里提供一个高级的用法，<br>思路很简单就是定义一个Id类型,通过实现Id类型的序列化和反序列化功能即可进行实现.<br>下面就用Gson和jackson来演示</p>
 </blockquote>
-<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><blockquote>
-<p>玩过docker的人都知道,这玩意真心好,都不用为环境操心了, 运维也只需要关心namespace和cgroups就好了，不用在去管什么rpm包,deb包,tar.gz扽等了。</p>
-</blockquote>
-<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><pre><code>Gitlab: 代码仓库, 构建工具(pipeline)
-Nexus:  maven仓库, docker register (新版Gitlab已经包含Registery)
-Docker: 容器
-Webhook: 自己写的 [Github] (https://github.com/youkale/gitlab-webhook)
-</code></pre><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><pre><code>                                        3
-                           +-----------------------------+
-                           |                             |
-                           |                             |
-+---------+   1     +------v-------+            +--------+------+
-|         |         |              |     2      |               |
-|  Coder  +---------&gt;    Gitlab    +------------&gt; Gitlab Runner |
-|         |         |              |            |               |
-+---------+         +---^----+-----+            +--------+------+
-                        |    |                           |
-                        |    |                           |
-                        |    |  +-----------------+      | 4
-                        |    |  |                 |      |
-                        |    |  | Docker Registry &lt;------+
-                        |    |  |                 |
-                        |   5|  +-------^---------+
-                       7|    |          |
-                        |    |          | 6
-                        |    |  +-------+---------+
-                        |    |  |                 |
-                        |    +--&gt; Target Server   |
-                        |       |                 |
-                        |       +-------+---------+
-                        |               |
-                        +---------------+
+<h3 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h3><pre><code>//Gson
+GsonBuilder builder = new GsonBuilder();
+builder.registerTypeAdapter(Id.class, (JsonSerializer&lt;Id&gt;) (src, typeOfSrc, context) -&gt;
+        new JsonPrimitive(src.getVal()));
+builder.registerTypeAdapter(Id.class, (JsonDeserializer&lt;Id&gt;) (json, typeOfT, context) -&gt;
+        new Id(json.getAsLong()));
+Gson gson = builder.create();
+User user = new User();
+user.setUserId(new Id(11111L));
+user.setUserName(&quot;youkale.github.io&quot;);
 
-1. 程序员push代码到gitlab，(1)
-2. Gitlab将任务分配给GitRunner，可以根据配置将执行结果(jar,js等)upload到gitlab或是打包docker镜像push到docker仓库. 也可以根据分支,tag指定构建 (2,3,4)
-3. 执行完毕后会将发送一个构建事件到你注册的Webhook里. (5)
-4. 目标服务器会装有webhook根据Gitlab事件信息拉取docker镜像,也可以从Gitlab拉去config文件或者其他的Artifacts. (6,7)
-</code></pre><blockquote>
-<p>大致的流程就是这样,Gitlab可以将各个环节需要用的Token，通过环境变量的形式添加到运行配置里面(.gitlab-ci.yml),从而避免了密钥泄露的情况.看完里这个，也许大家会在想，这个其实跟我们常用的jenkins差不多嘛，其实我安利gitlab的原因是它的一系列访问api、pipeline、webhook、artifacts、docker支持、用户友好、k8s的支持也很好.</p>
-</blockquote>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><pre><code>构建前需要准备Docker基础镜像,比如java的maven依赖镜像,golang的GOPATH镜像,js的node基础镜像
-下面java工程我用的就是maven:3.5.2-jdk-8-alpine这个镜像
-</code></pre><h2 id="构建java工程"><a href="#构建java工程" class="headerlink" title="构建java工程"></a>构建java工程</h2><pre><code>image: docker.youkale.com:18443/docker:17.12.1-ce
-services:
-  - docker.youkale.com:18443/docker:dind
-stages:
-  - build
-  - package
-variables:
-  api_version: 1.0.8-api-release
-api-build:
-  image: docker.youkale.com:18443/maven:3.5.2-jdk-8-alpine
-  stage: build
-  script:
-    - ./mvnw clean package spring-boot:repackage -DskipTests=true
-  artifacts:
-    name: &quot;$CI_JOB_NAME&quot;
-    expire_in: 1 weeks
-    paths:
-      - target/api.jar
-api-package:
-  stage: package
-  script:
-  - &quot;docker build -t docker.youkale.com:18442/api:${api_version} ./api&quot;
-  - &quot;docker login -u gitlab-ci -p ${nexus_docker_password} docker.youkale.com:18442&quot;
-  - &quot;docker push docker.youkale.com:18442/api:${api_version}&quot;
+String s = gson.toJson(user);
+System.out.println(s);
 
-说明:
-    image: 执行本次构建使用的image
-    stages: 执行本次构建的顺序, build,package
-    variables: 环境变量
-    api-build: 自定义构建名称,会定义构建的策略.上传到artifacts会以这个命名.同样的webhook收到的事件也会包含此构建的名字,以及其他git相关的信息.我们根据这个信息进行应用的部署.
-    ${nexus_docker_password}: 通过gitlab在运行的时候设置
-</code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code>webhook配置: https://raw.githubusercontent.com/youkale/gitlab-webhook/master/README.md
-nexus docker仓库配置: 难度倒是没有，需要(hosted,proxy,group), 但是还是走了不少弯路，比如docker login有问题等,不过最后也还是解决了.
-gitlab-runner: Settings -&gt; CI/CD -&gt; Runners
-gitlab-webhook: Settings -&gt; Integrations
-分支、tag保护: Settings -&gt; Repository
-</code></pre><blockquote>
-<p>gitlab构建部分的功能基本说说完了,每个地方还有不少细节,当我们实际用到的时候，我们可以结合gitlab详细的文档进行参考配置.</p>
-</blockquote>
-<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><pre><code>1. private-token问题:
-当使用官方gitlab的时候private-token在头部，而且全部大写，当使用gitlab-ce版的时候，private-token为首字母大写Private-Token(没记错的话)
-例子: curl -XGET -L --header \&quot;PRIVATE-TOKEN: ${gitlab_artifact_token}\&quot; &apos;https://gitlab.com/youkale/kakaka/-/jobs/artifacts/master/raw/dist/index.html?job=node-build&apos; -o src/main/resources/templates/index.html
-2. 用这种模式构建，java工程的话不太推荐父子工程(本人主要用java)，当两个子工程都需要构建的时候，会不太舒服，虽然说这个方案也行
-</code></pre><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><blockquote>
-<p>通过这种方式，我想开发乐呵呵，测试乐呵呵，运维乐呵呵. 大家都不用那么痛苦了.而且可玩的方式也很多，不一定需要k8s，对于小于20个docker的项目我觉得还可以结合docker-compose来部署.也不需要每一个新环境花费一天半天的时间来搭建. </p>
+User user1 = gson.fromJson(s, User.class);
+System.out.println(&quot;gson  &quot; + user1);
+
+//Jackson
+ObjectMapper objectMapper = new ObjectMapper();
+SimpleModule module = new SimpleModule();
+module.addSerializer(Id.class, new IdJacksonSerializer(Id.class));
+module.addDeserializer(Id.class, new IdJacksonDeserializer(Id.class));
+objectMapper.registerModule(module);
+String s1 = objectMapper.writeValueAsString(user);
+System.out.println(s1);
+User user2 = objectMapper.readValue(s1, User.class);
+System.out.println(&quot;jackson  &quot; + user2);
+</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><pre><code>通过自定义类型
+</code></pre><h3 id="定义类User"><a href="#定义类User" class="headerlink" title="定义类User"></a>定义类User</h3><pre><code>public static class User {
+
+    private Id userId;
+
+    private String userName;
+
+    public Id getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Id userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;User{&quot; +
+                &quot;userId=&quot; + userId +
+                &quot;, userName=&apos;&quot; + userName + &apos;\&apos;&apos; +
+                &apos;}&apos;;
+    }
+}
+</code></pre><h3 id="定义Id类"><a href="#定义Id类" class="headerlink" title="定义Id类"></a>定义Id类</h3><pre><code>public static class Id {
+
+    private final Long val;
+
+    public Long getVal() {
+        return val;
+    }
+
+    public Id(Long val) {
+        this.val = val;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(val);
+    }
+}
+</code></pre><h3 id="jackson序列反序列实现"><a href="#jackson序列反序列实现" class="headerlink" title="jackson序列反序列实现"></a>jackson序列反序列实现</h3><pre><code>public static class IdJacksonDeserializer extends StdDeserializer&lt;Id&gt; {
+    public IdJacksonDeserializer(Class&lt;?&gt; vc) {
+        super(vc);
+    }
+
+    @Override
+    public Id deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+        return new Id(p.getValueAsLong());
+    }
+}
+
+public static class IdJacksonSerializer extends StdSerializer&lt;Id&gt; {
+
+    public IdJacksonSerializer(Class&lt;Id&gt; t) {
+        super(t);
+    }
+    @Override
+    public void serialize(Id value, JsonGenerator gen, SerializerProvider provider) throws IOException {
+        gen.writeString(String.valueOf(value.getVal()));
+    }
+}
+</code></pre><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote>
+<p>从Gson和jackson的API看出这类的功能老早就由大神们想到了,有时候总在感叹,自己多渺小.</p>
 </blockquote>
 
       
@@ -448,8 +469,8 @@ gitlab-webhook: Settings -&gt; Integrations
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/26/IntelliJ IDEA的Tips贼好用/" rel="next" title="IntelliJ IDEA的Tips贼好用">
-                <i class="fa fa-chevron-left"></i> IntelliJ IDEA的Tips贼好用
+              <a href="/2018/08/29/Gitlab和Docker实践持续集成/" rel="next" title="Gitlab和Docker实践持续集成">
+                <i class="fa fa-chevron-left"></i> Gitlab和Docker实践持续集成
               </a>
             
           </div>
@@ -457,10 +478,6 @@ gitlab-webhook: Settings -&gt; Integrations
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/18/由js精度缺失引发的问题及处理方法/" rel="prev" title="由js精度缺失引发的问题及处理方法">
-                由js精度缺失引发的问题及处理方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -586,7 +603,7 @@ gitlab-webhook: Settings -&gt; Integrations
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#打包"><span class="nav-number">1.1.</span> <span class="nav-text">打包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker"><span class="nav-number">1.2.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用工具"><span class="nav-number">1.3.</span> <span class="nav-text">使用工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本流程"><span class="nav-number">1.4.</span> <span class="nav-text">基本流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.5.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建java工程"><span class="nav-number">1.6.</span> <span class="nav-text">构建java工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.7.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑"><span class="nav-number">1.8.</span> <span class="nav-text">坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">1.9.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题场景"><span class="nav-number">1.</span> <span class="nav-text">问题场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通场景的处理方法"><span class="nav-number">1.1.</span> <span class="nav-text">普通场景的处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gson处理方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">gson处理方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jackson处理方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">jackson处理方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级场景处理"><span class="nav-number">1.2.</span> <span class="nav-text">高级场景处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#核心代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.2.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义类User"><span class="nav-number">1.2.3.</span> <span class="nav-text">定义类User</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义Id类"><span class="nav-number">1.2.4.</span> <span class="nav-text">定义Id类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jackson序列反序列实现"><span class="nav-number">1.2.5.</span> <span class="nav-text">jackson序列反序列实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
