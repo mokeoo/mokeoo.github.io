@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="一直在路上">
 <meta property="og:description" content="问题场景在使用java的Long类型过程中,当这个Long类型数值超过 1^0+1^1+1^2+...1^58的范围后就会引发精度丢失, 详见JS[IEEE754规范](https://en.wikipedia.org/wiki/IEEE_754) 常见的现象就是比如:1000967854800048128,通过js转换成Number类型成为了:1000967854800048100, 由此会引发">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-18T04:53:03.465Z">
+<meta property="og:updated_time" content="2018-11-18T04:55:26.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由js精度缺失引发的问题及处理方法">
 <meta name="twitter:description" content="问题场景在使用java的Long类型过程中,当这个Long类型数值超过 1^0+1^1+1^2+...1^58的范围后就会引发精度丢失, 详见JS[IEEE754规范](https://en.wikipedia.org/wiki/IEEE_754) 常见的现象就是比如:1000967854800048128,通过js转换成Number类型成为了:1000967854800048100, 由此会引发">
@@ -373,7 +373,6 @@ String s1 = objectMapper.writeValueAsString(user);
 System.out.println(s1);
 User user2 = objectMapper.readValue(s1, User.class);
 System.out.println(&quot;jackson  &quot; + user2);
-</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><pre><code>通过自定义类型
 </code></pre><h3 id="定义类User"><a href="#定义类User" class="headerlink" title="定义类User"></a>定义类User</h3><pre><code>public static class User {
 
     private Id userId;
@@ -603,7 +602,7 @@ public static class IdJacksonSerializer extends StdSerializer&lt;Id&gt; {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题场景"><span class="nav-number">1.</span> <span class="nav-text">问题场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通场景的处理方法"><span class="nav-number">1.1.</span> <span class="nav-text">普通场景的处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gson处理方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">gson处理方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jackson处理方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">jackson处理方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级场景处理"><span class="nav-number">1.2.</span> <span class="nav-text">高级场景处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#核心代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.2.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义类User"><span class="nav-number">1.2.3.</span> <span class="nav-text">定义类User</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义Id类"><span class="nav-number">1.2.4.</span> <span class="nav-text">定义Id类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jackson序列反序列实现"><span class="nav-number">1.2.5.</span> <span class="nav-text">jackson序列反序列实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题场景"><span class="nav-number">1.</span> <span class="nav-text">问题场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通场景的处理方法"><span class="nav-number">1.1.</span> <span class="nav-text">普通场景的处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gson处理方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">gson处理方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jackson处理方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">jackson处理方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级场景处理"><span class="nav-number">1.2.</span> <span class="nav-text">高级场景处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#核心代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义类User"><span class="nav-number">1.2.2.</span> <span class="nav-text">定义类User</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义Id类"><span class="nav-number">1.2.3.</span> <span class="nav-text">定义Id类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jackson序列反序列实现"><span class="nav-number">1.2.4.</span> <span class="nav-text">jackson序列反序列实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

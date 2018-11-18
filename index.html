@@ -374,7 +374,6 @@ String s1 = objectMapper.writeValueAsString(user);
 System.out.println(s1);
 User user2 = objectMapper.readValue(s1, User.class);
 System.out.println(&quot;jackson  &quot; + user2);
-</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><pre><code>通过自定义类型
 </code></pre><h3 id="定义类User"><a href="#定义类User" class="headerlink" title="定义类User"></a>定义类User</h3><pre><code>public static class User {
 
     private Id userId;
@@ -590,40 +589,40 @@ public static class IdJacksonSerializer extends StdSerializer&lt;Id&gt; {
 <p>本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?</p>
 </blockquote>
 <h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><blockquote>
-<p>上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: windows常见的zip,rar,msi等; Linux常见的rpm,deb等; mac常见的dmg等;java语言的有jar,war包等; 然而多种的打包形式,依赖的环境不一样,每种包也只能是在特定的环境下才能使用,这其实对运维也是一种挑战. 那么有没有一种包是各个平台都可以用，而且不用去关心目标机器环境的呢? 答案就是: docker,下面我们就结合docker,进行化自动化打包, 缩短各个职能间沟通的成本.</p>
+<p>上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: windows常见的zip,rar,msi等; Linux常见的rpm,deb等; mac常见的dmg等;java语言的有jar,war包等; 然而多种的打包形式,依赖的环境不一样,每种包也只能是在特定的环境下才能使用,这其实对运维也是一种挑战. 那么有没有一种包是各个平台都可以用，而且不用去关心目标机器环境的呢? 答案就是: docker,下面我们就结合docker,进行自动化打包, 缩短各个职能间沟通的成本.</p>
 </blockquote>
-<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><blockquote>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><blockquote>
 <p>玩过docker的人都知道,这玩意真心好,都不用为环境操心了, 运维也只需要关心namespace和cgroups就好了，不用在去管什么rpm包,deb包,tar.gz扽等了。</p>
 </blockquote>
 <h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><pre><code>Gitlab: 代码仓库, 构建工具(pipeline)
 Nexus:  maven仓库, docker register (新版Gitlab已经包含Registery)
 Docker: 容器
 Webhook: 自己写的 [Github] (https://github.com/youkale/gitlab-webhook)
-</code></pre><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><pre><code>                                        3
-                           +-----------------------------+
-                           |                             |
-                           |                             |
-+---------+   1     +------v-------+            +--------+------+
-|         |         |              |     2      |               |
-|  Coder  +---------&gt;    Gitlab    +------------&gt; Gitlab Runner |
-|         |         |              |            |               |
-+---------+         +---^----+-----+            +--------+------+
-                        |    |                           |
-                        |    |                           |
-                        |    |  +-----------------+      | 4
-                        |    |  |                 |      |
-                        |    |  | Docker Registry &lt;------+
-                        |    |  |                 |
-                        |   5|  +-------^---------+
-                       7|    |          |
-                        |    |          | 6
-                        |    |  +-------+---------+
-                        |    |  |                 |
-                        |    +--&gt; Target Server   |
-                        |       |                 |
-                        |       +-------+---------+
-                        |               |
-                        +---------------+
+</code></pre><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><pre><code>                                                3
+                                   +-----------------------------+
+                                   |                             |
+                                   |                             |
+        +---------+   1     +------v-------+            +--------+------+
+        |         |         |              |     2      |               |
+        |  Coder  +---------&gt;    Gitlab    +------------&gt; Gitlab Runner |
+        |         |         |              |            |               |
+        +---------+         +---^----+-----+            +--------+------+
+                                |    |                           |
+                                |    |                           |
+                                |    |  +-----------------+      | 4
+                                |    |  |                 |      |
+                                |    |  | Docker Registry &lt;------+
+                                |    |  |                 |
+                                |   5|  +-------^---------+
+                               7|    |          |
+                                |    |          | 6
+                                |    |  +-------+---------+
+                                |    |  |                 |
+                                |    +--&gt; Target Server   |
+                                |       |                 |
+                                |       +-------+---------+
+                                |               |
+                                +---------------+
 
 1. 程序员push代码到gitlab，(1)
 2. Gitlab将任务分配给GitRunner，可以根据配置将执行结果(jar,js等)upload到gitlab或是打包docker镜像push到docker仓库. 也可以根据分支,tag指定构建 (2,3,4)
@@ -678,7 +677,7 @@ gitlab-webhook: Settings -&gt; Integrations
 例子: curl -XGET -L --header \&quot;PRIVATE-TOKEN: ${gitlab_artifact_token}\&quot; &apos;https://gitlab.com/youkale/kakaka/-/jobs/artifacts/master/raw/dist/index.html?job=node-build&apos; -o src/main/resources/templates/index.html
 2. 用这种模式构建，java工程的话不太推荐父子工程(本人主要用java)，当两个子工程都需要构建的时候，会不太舒服，虽然说这个方案也行
 </code></pre><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><blockquote>
-<p>通过这种方式，我想开发乐呵呵，测试乐呵呵，运维乐呵呵. 大家都不用那么痛苦了.而且可玩的方式也很多，不一定需要k8s，对于小于20个docker的项目我觉得还可以结合docker-compose来部署.也不需要每一个新环境花费一天半天的时间来搭建. </p>
+<p>通过这种方式，我想开发乐呵呵，测试乐呵呵，运维乐呵呵. 大家都不用那么痛苦了.而且可玩的方式也很多，不一定需要k8s，对于小于20个docker的项目我觉得还可以结合docker-compose来部署.也不需要每一个新环境花费一天半天的时间来搭建.</p>
 </blockquote>
 
           
