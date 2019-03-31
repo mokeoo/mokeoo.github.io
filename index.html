@@ -239,7 +239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/03/31/提高golang的可读性/">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/03/30/提高golang的可读性/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="低端程序员">
@@ -258,7 +258,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/31/提高golang的可读性/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/03/30/提高golang的可读性/" itemprop="url">如何提高golang的可读性</a></h1>
         
 
         <div class="post-meta">
@@ -270,8 +270,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T17:35:01+08:00">
-                2019-03-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-30T18:55:00+08:00">
+                2019-03-30
               </time>
             
 
@@ -289,8 +289,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/31/提高golang的可读性/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/31/提高golang的可读性/" itemprop="commentCount"></span>
+                <a href="/2019/03/30/提高golang的可读性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/30/提高golang的可读性/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -298,7 +298,7 @@
 
           
           
-             <span id="/2019/03/31/提高golang的可读性/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2019/03/30/提高golang的可读性/" class="leancloud_visitors" data-flag-title="如何提高golang的可读性">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -331,7 +331,7 @@
       
         
           
-            <h1 id="如何提高代码的可读性-golang"><a href="#如何提高代码的可读性-golang" class="headerlink" title="如何提高代码的可读性(golang)"></a>如何提高代码的可读性(golang)</h1><h2 id="1-尽早返回"><a href="#1-尽早返回" class="headerlink" title="1. 尽早返回"></a>1. 尽早返回</h2><p>反例:</p>
+            <h2 id="1-尽早返回"><a href="#1-尽早返回" class="headerlink" title="1. 尽早返回"></a>1. 尽早返回</h2><p>反例:</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UserCtrl</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">UserInfo</span><span class="params">(userId <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  user.UserInfo(userId)</span><br><span class="line">  ....</span><br><span class="line">  ....</span><br><span class="line">  <span class="comment">//resp result ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//UserService</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">UserInfo</span><span class="params">(userId <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(userId) &gt; <span class="number">0</span> &#123; </span><br><span class="line">  	<span class="comment">//do query database </span></span><br><span class="line">    .....</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// repo</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">queryUserInfo</span><span class="params">(userId <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(userId) &gt; <span class="number">0</span>&#123;</span><br><span class="line">    <span class="comment">//select * from user where user_id = ?</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>从这个例子来看，在service层和数据库查询，我们都进行了userId的判断. 因为当我们经常会忘记，我们是否在上一层入参的时候进行了userId为空的判断. 为了避免空指针，我们不得已一层层进行判断.</p>
 <p>假如我们尽早地返回，那么就可以避免后续的层层判空</p>
