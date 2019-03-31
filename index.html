@@ -6,10 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -115,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="https://youkale.github.io/"/>
+  <link rel="canonical" href="https://youkale.github.io/">
 
 
 
@@ -133,7 +133,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
 
   
   
@@ -144,13 +144,13 @@
   page-home">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">一直在路上</span>
         <span class="logo-line-after"><i></i></span>
@@ -180,7 +180,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             Home
           </a>
@@ -190,7 +190,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             About
           </a>
@@ -200,7 +200,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             Archives
           </a>
@@ -234,20 +234,1550 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/03/31/提高golang的可读性/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/31/提高golang的可读性/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T17:35:01+08:00">
+                2019-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/31/提高golang的可读性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/31/提高golang的可读性/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/03/31/提高golang的可读性/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="如何提高代码的可读性-golang"><a href="#如何提高代码的可读性-golang" class="headerlink" title="如何提高代码的可读性(golang)"></a>如何提高代码的可读性(golang)</h1><h2 id="1-尽早返回"><a href="#1-尽早返回" class="headerlink" title="1. 尽早返回"></a>1. 尽早返回</h2><p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UserCtrl</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">UserInfo</span><span class="params">(userId <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  user.UserInfo(userId)</span><br><span class="line">  ....</span><br><span class="line">  ....</span><br><span class="line">  <span class="comment">//resp result ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//UserService</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">UserInfo</span><span class="params">(userId <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(userId) &gt; <span class="number">0</span> &#123; </span><br><span class="line">  	<span class="comment">//do query database </span></span><br><span class="line">    .....</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// repo</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">queryUserInfo</span><span class="params">(userId <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(userId) &gt; <span class="number">0</span>&#123;</span><br><span class="line">    <span class="comment">//select * from user where user_id = ?</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从这个例子来看，在service层和数据库查询，我们都进行了userId的判断. 因为当我们经常会忘记，我们是否在上一层入参的时候进行了userId为空的判断. 为了避免空指针，我们不得已一层层进行判断.</p>
+<p>假如我们尽早地返回，那么就可以避免后续的层层判空</p>
+<p>推荐写法:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//userCtrl</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">UserInfo</span><span class="params">(userId <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(userId) == <span class="number">0</span> &#123;</span><br><span class="line">    <span class="comment">//resp some error</span></span><br><span class="line">  &#125;</span><br><span class="line">  user.UserInfo(userId)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-写好分支语句"><a href="#2-写好分支语句" class="headerlink" title="2. 写好分支语句"></a>2. 写好分支语句</h2><p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">xxx</span><span class="params">(lang <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> lang == <span class="string">"java"</span>&#123;</span><br><span class="line">    doA()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    doB()</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> lang == <span class="string">"java"</span>&#123;</span><br><span class="line">    doC()</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    doD()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>推荐写法:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">java</span><span class="params">(lang <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  doA()</span><br><span class="line">  doC()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">other</span><span class="params">(lang <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">  doB()</span><br><span class="line">  doC()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>if都需要包含else</p>
+<p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> cmd == <span class="string">"1"</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> status == <span class="number">0</span> &#123;</span><br><span class="line">    doSome()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> tag == <span class="number">1</span> &#123;</span><br><span class="line">    doSomeB()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>推荐写法:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> cmd == <span class="string">"1"</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> status == <span class="number">0</span> &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> tag == <span class="number">1</span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>避免啰嗦的条件</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> isDone() == <span class="literal">true</span> &#123;</span><br><span class="line">  do()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>推荐:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> isDone() &#123;</span><br><span class="line">  doSome()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用switch语句</p>
+<p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> lang == <span class="string">"java"</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> lang == <span class="string">"c#"</span> &#123;</span><br><span class="line">  </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> lang == <span class="string">"clojure"</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>推荐写法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">switch lang:</span><br><span class="line">case &quot;java&quot;:</span><br><span class="line">case &quot;c#&quot;:</span><br><span class="line">case &quot;clojure&quot;:</span><br></pre></td></tr></table></figure>
+<p>减少逻辑表达式:</p>
+<p>逻辑表达式是门电路的表达式，总会有人不能记得他的先后执行顺序。</p>
+<p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> lang == <span class="string">"java"</span> || lang == <span class="string">"c#"</span> &amp;&amp; lang == <span class="string">"clojure"</span> &#123;</span><br><span class="line">  doSome()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果非得使用逻辑表达式，推荐使用括号，显示地说明调用的顺序.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (lang == <span class="string">"java"</span> || lang == <span class="string">"c#"</span>) &amp;&amp; lang == <span class="string">"clojure"</span> &#123;</span><br><span class="line">  doSome()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用正序的逻辑</p>
+<p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> !isUserInfoSaved() &#123;</span><br><span class="line">  doA()</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  doB()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> !isNotStop() &#123;</span><br><span class="line">  doSome()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用一个符合人类思考顺序方式来写分支，减少阅读代码时的时间</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> isUserInfoSaved() &#123;</span><br><span class="line">  doB()</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  doA()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> isStart()&#123;</span><br><span class="line">  doSome()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-合理使用局部变量"><a href="#3-合理使用局部变量" class="headerlink" title="3.合理使用局部变量"></a>3.合理使用局部变量</h2><p>可能我们知道定义一个变量会开辟一块新的内存，有时候觉得自己重复使用一个变量，会让性能”好一些”, 于是我们就会写出下面的代码</p>
+<p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name</span><br><span class="line"><span class="keyword">if</span> login &#123;</span><br><span class="line">  name = <span class="string">"user"</span></span><br><span class="line">  doSome(name)</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  name = <span class="string">"guest"</span></span><br><span class="line">  doSome(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实在栈上开辟内存的成本很低，编译器会对代码进行逃逸分析，而且执行完这个方法后，内存就会被回收掉，所以不用担心这个性能问题.</p>
+<p>推荐写法:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span> login &#123;</span><br><span class="line">	<span class="comment">//使用局部变量</span></span><br><span class="line">  name := <span class="string">"user"</span></span><br><span class="line">  doSome(name)</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  name := <span class="string">"guest"</span></span><br><span class="line">  doSome(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有的时候我们会想耍个酷，那么牛逼的调用一行代码就写完了，可是这时候阅读起来是非常痛苦的一件事情.</p>
+<p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">saveXXX(queryRole(),queryOrder(),saveXXX(queryUserInfo(genUserId())))</span><br></pre></td></tr></table></figure>
+<p>推荐写法：</p>
+<p>我们把参数通过一个中间变量存起来，这样会很明显地说明，我们都干了些什么.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">userInfo := queryUserInfo(genUserId)</span><br><span class="line">u := saveXXX(userInfo)</span><br><span class="line">saveXXX(queryRole(),queryOrder(),u)</span><br></pre></td></tr></table></figure>
+<h2 id="4-循环"><a href="#4-循环" class="headerlink" title="4.循环"></a>4.循环</h2><p>  循环本身就不好读，假如在循环中包含continue,break之类的，让原本的代码更难读 </p>
+<p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i,itm := <span class="keyword">range</span> Users &#123;</span><br><span class="line">  <span class="keyword">if</span> item.Name != <span class="string">"admin"</span> &#123;</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    doSome()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>推荐写法:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i,itm := <span class="keyword">range</span> Users &#123;</span><br><span class="line">  <span class="keyword">if</span> item.Name == <span class="string">"admin"</span> &#123;</span><br><span class="line">    doSome()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用i,j之类的下标，本身就比较相似，一不小心就会造成了下标越界,推荐使用foreach</p>
+<p>反例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span> ; i&lt; <span class="built_in">len</span>(users); i++ &#123;</span><br><span class="line">   <span class="keyword">for</span> j:=<span class="number">0</span> ; j &lt; <span class="built_in">len</span>(users[i].children); j++ &#123;</span><br><span class="line">     <span class="comment">// doSome</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>推荐写法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> _,itm := <span class="keyword">range</span> users &#123;</span><br><span class="line">  <span class="keyword">for</span> _, c := <span class="keyword">range</span> item&#123;</span><br><span class="line">    <span class="comment">//dosome</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假如非得使用下标操作，也要避免使用i,j之类的变量</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> uidx :=<span class="number">0</span> ; uidx&lt; <span class="built_in">len</span>(users); uidx++ &#123;</span><br><span class="line">   childen := users[uidx].children  <span class="comment">//使用中间变量,避免臃肿</span></span><br><span class="line">   <span class="keyword">for</span> chidx:=<span class="number">0</span> ; chidx &lt; <span class="built_in">len</span>(childen); chidx++ &#123;</span><br><span class="line">       <span class="comment">// chidx 和 uidx 能避免混淆，能在使用的过程中避免出错。</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-面条代码-过程式代码"><a href="#5-面条代码-过程式代码" class="headerlink" title="5.面条代码, 过程式代码"></a>5.面条代码, 过程式代码</h2><p>面条代码过程式代码</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> UserInf <span class="keyword">struct</span> &#123;</span><br><span class="line">  UserName   <span class="keyword">string</span></span><br><span class="line">  UserId     <span class="keyword">string</span></span><br><span class="line">  Role       *Role</span><br><span class="line">  Alias     <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Role <span class="keyword">struct</span> &#123;</span><br><span class="line">  Id <span class="keyword">string</span></span><br><span class="line">  Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">save</span><span class="params">(inf *UserInf)</span></span>&#123;</span><br><span class="line">  Role(inf)</span><br><span class="line">  inf.Alias = genAlias()</span><br><span class="line">  update(inf)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">update</span><span class="params">(inf *UserInf)</span></span>&#123;</span><br><span class="line">  <span class="comment">//update ....</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Role</span><span class="params">(inf *UserInfo)</span></span> &#123;</span><br><span class="line">  queryUser(inf)</span><br><span class="line">  inf.Role = queryRole(inf.UserId)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">queryUser</span><span class="params">(inf *UserInf)</span></span>&#123;</span><br><span class="line">  <span class="comment">//select * from user where user_id = ?</span></span><br><span class="line">  inf.UserName = ...</span><br><span class="line">  inf.xxx = ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-控制代码的长度"><a href="#6-控制代码的长度" class="headerlink" title="6. 控制代码的长度"></a>6. 控制代码的长度</h2><p>人的左脑关心的是逻辑，右脑做的是快照(可能是伪科学)，实际情况中，假如我们一眼能看完，是不是剩下的就是在想逻辑，而不是一边读代码，一边想逻辑，这样能让我们大脑一次性把看到的代码缓存起来，然后专注于想逻辑。简短的代码，也可以避免bug，所以方法建议都控制在100行之内。</p>
+<h2 id="7-命名"><a href="#7-命名" class="headerlink" title="7. 命名"></a>7. 命名</h2><p>这个放最后来写的原因是这个命名本来就很难，命名得好就会让代码清晰可读，命名不好，就会误导导致需要大量的注视来注释代码，本来维护代码已经是一件痛苦的事情了，假如在修改了代码后，注释没有同步修改，反而会引起误导。因为母语不是英文，很多同学跟我一样也都很痛苦，这里可以上网找找相关命名的资料，本人水平有限也只能是大概地举几个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bool isStart // 服务启动的状态，最好使用正向的表达，是否启动，不推荐使用  bool isNotStop</span><br><span class="line">func ComputeUserScore() //计算用户积分，假如这是一个耗时的操作，推荐在方法名上就表示出来，不推荐使用GetUserScore,</span><br><span class="line">func DownloadFile() //下载文件，不推荐使用GetFile</span><br></pre></td></tr></table></figure>
+<h2 id="8-使用channel避免锁"><a href="#8-使用channel避免锁" class="headerlink" title="8.使用channel避免锁"></a>8.使用channel避免锁</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/03/01/无痛使用mysql-slave/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/01/无痛使用mysql-slave/" itemprop="url">无痛使用mysql-slave</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-01T10:40:00+08:00">
+                2019-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/01/无痛使用mysql-slave/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/01/无痛使用mysql-slave/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/03/01/无痛使用mysql-slave/" class="leancloud_visitors" data-flag-title="无痛使用mysql-slave">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>在公司的一些业务中，不管什么分布式应用还是单机应用，不可否认CURD是日常工作中最常接触的，那么数据库的性能问题，可能就关系到你整个应用的性能。随着公司的成长，数据两的增大，很多公司为了保证数据的安全、可用，一般都会通过binlog加入slave服务器对master进行一个备份, 但是在实际应用中，很多人都把slave仅仅当作一个备份，最多的就是dba同学可能在slave上面查点数据, 而我们的应用还只是对主库的一个读写。那么我们怎么样才能把slave利用起来呢？ 很多同学可能回想到在应用代码中配置两个数据源,针对select语句走从库，修改操作走主库。用过sharding-jdbc的也许就会想到用他的master-slave模式，这些都是可以实现读写分离。</p>
+</blockquote>
+<h2 id="Connector-J"><a href="#Connector-J" class="headerlink" title="Connector/J"></a>Connector/J</h2><blockquote>
+<p>前面卖了个关子，那么下面我就来补充一个使用原生Mysql驱动如何简单实现读写分离:</p>
+</blockquote>
+<pre><code>jdbc:mysql:replication://[master host][:port],[slave host 1][:port][,[slave host 2][:port]]...[/[database]][?propertyName1=propertyValue1[&amp;propertyName2=propertyValue2]...]
+</code></pre><p>是不是看了这个URI立刻就明白了？ mysql驱动可以直接通过配置replication来实现读写分离.<br>当用多个slave,会自动在slaves中根据你的策略进行LB,内置的策略有random(随机),bestResponseTime(最快响应),sequential(顺序),如果这些都不能满足你的需求,你还可以自己实现BalanceStrategy接口自定义一个.</p>
+<p>那么我们的应用代码需要怎么改呢？</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/02/18/k8s记录/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/18/k8s记录/" itemprop="url">k8s记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T15:55:36+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/18/k8s记录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/18/k8s记录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/18/k8s记录/" class="leancloud_visitors" data-flag-title="k8s记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="用rancher配置k8s环境"><a href="#用rancher配置k8s环境" class="headerlink" title="用rancher配置k8s环境"></a>用rancher配置k8s环境</h1><h2 id="删除已经安装的docker"><a href="#删除已经安装的docker" class="headerlink" title="删除已经安装的docker"></a>删除已经安装的docker</h2><pre><code>yum remove docker \
+            docker-client \
+            docker-client-latest \
+            docker-common \
+            docker-latest \
+            docker-latest-logrotate \
+            docker-logrotate \
+            docker-selinux \
+            docker-engine-selinux \
+            docker-engine
+
+yum install -y yum-utils \
+    device-mapper-persistent-data \
+    lvm2
+
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+yum install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-selinux-17.03.2.ce-1.el7.centos.noarch.rpm
+
+yum install docker-ce-17.03.2.ce-1.el7.centos
+</code></pre><h2 id="配置-rancher"><a href="#配置-rancher" class="headerlink" title="配置 rancher"></a>配置 rancher</h2><pre><code>docker pull rancher/server:v1.6.14
+
+docker run -d --name rancher-mysql -p 3306:3306 -v /opt/rancher/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=rancher_mysql -d percona:5.7.22-stretch --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+docker run -it --rm --link  rancher-mysql
+
+create database rancher ;
+GRANT ALL ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;rancher_mysql&apos;;
+GRANT ALL ON rancher.* TO &apos;cattle&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;rancher&apos;;
+
+docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:v1.6.14 --db-host 172.20.2.35 --db-port 3306 --db-user root --db-pass rancher_mysql
+
+docker run -d -p 3306:3306 -v /data/rancher/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=rancher_mysql --restart=unless-stopped -p 8080:8080 rancher/server:v1.6.21
+
+docker run -d  -v /opt/rancher/mysql:/var/lib/mysql  --restart=unless-stopped -p 8080:8080 rancher/server:v1.6.14
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/02/13/linux监控相关/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/linux监控相关/" itemprop="url">linux监控相关</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T15:15:50+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/linux监控相关/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/13/linux监控相关/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/13/linux监控相关/" class="leancloud_visitors" data-flag-title="linux监控相关">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="端口连接情况"><a href="#端口连接情况" class="headerlink" title="端口连接情况"></a>端口连接情况</h2><pre><code>lsof -i :6379
+</code></pre><h2 id="网卡速率"><a href="#网卡速率" class="headerlink" title="网卡速率"></a>网卡速率</h2><pre><code>sar -n DEV 1
+</code></pre><h2 id="IO监控"><a href="#IO监控" class="headerlink" title="IO监控"></a>IO监控</h2><pre><code>iostat -x -t 1
+</code></pre><h2 id="综合监控"><a href="#综合监控" class="headerlink" title="综合监控"></a>综合监控</h2><pre><code>dstat -cdlmnpsy
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/02/13/数据库杂记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/数据库杂记/" itemprop="url">数据库杂记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T15:11:45+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/数据库杂记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/13/数据库杂记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/13/数据库杂记/" class="leancloud_visitors" data-flag-title="数据库杂记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Postgres导出"><a href="#Postgres导出" class="headerlink" title="Postgres导出"></a>Postgres导出</h3><p>  \o 文件名 select * from table ; \o</p>
+<p>  \copy (select parent_id+123456789,count(*) cnt from user_relations where user_id between 24304192 and 24368430 and parent_id != 1 group by parent_id order by cnt desc) To ‘/tmp/sf.csv’ With CSV</p>
+<h3 id="Mysql初始化"><a href="#Mysql初始化" class="headerlink" title="Mysql初始化"></a>Mysql初始化</h3><h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><pre><code>mysqld --user=mysql  --datadir=/datas/mysql --initialize-insecure
+</code></pre><h4 id="重设密码"><a href="#重设密码" class="headerlink" title="重设密码"></a>重设密码</h4><pre><code>service mysql stop
+[mysqld] skip-grant-tables
+update user set authentication_string = password(&apos;Aa12345678&apos;) where user = &apos;root&apos;;
+flush privileges;
+set global validate_password_policy=0;
+ALTER USER &apos;root&apos;@&apos;localhost&apos; identified by &apos;Aa12345678&apos; ;
+GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;Aa12345678&apos; WITH GRANT OPTION;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/02/13/es集群配置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/es集群配置/" itemprop="url">es集群配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T15:04:44+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/es集群配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/13/es集群配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/13/es集群配置/" class="leancloud_visitors" data-flag-title="es集群配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="服务器部署说明"><a href="#服务器部署说明" class="headerlink" title="服务器部署说明"></a>服务器部署说明</h2><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><ol>
+<li><p>安装wget</p>
+<figure class="highlight plain"><figcaption><span>install wget -y```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2. 修改内核最大map数量并生效</span><br><span class="line">``` echo  &apos;vm.max_map_count = 262144&apos; &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p ``` </span><br><span class="line">3. 新增用户es</span><br><span class="line">``` useradd es -d /opt/es</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置文件打开数量<br>编辑 <figure class="highlight plain"><figcaption><span>/etc/security/limits.conf ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">增加 ```es               -       nofile          65536</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<h3 id="elasticsearch-集群部署"><a href="#elasticsearch-集群部署" class="headerlink" title="elasticsearch 集群部署"></a>elasticsearch 集群部署</h3><ol>
+<li><p>查看各个节点ip,确保能相互ping通:<br> 如:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10.20.250.80</span><br><span class="line">10.20.250.81</span><br><span class="line">10.20.250.82</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>各个节点切换用户,下载elasticsearch,解压</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - es</span><br><span class="line">wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.3.1.tar.gz</span><br><span class="line">tar -zxv -f elasticsearch-6.3.1.tar.gz</span><br><span class="line">ln -s elasticsearch-6.3.1 elasticsearch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑节点1配置文件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">    cluster.name: erp-dfs</span><br><span class="line">    node.name: $&#123;HOSTNAME&#125;</span><br><span class="line">    #path.data: /esdata/data</span><br><span class="line">    #path.logs: /esdata/logs</span><br><span class="line">    network.host: 10.20.250.80</span><br><span class="line">    http.port: 9200</span><br><span class="line">    transport.tcp.port: 9300</span><br><span class="line">    bootstrap.system_call_filter: false</span><br><span class="line">    xpack.monitoring.collection.enabled: true</span><br><span class="line">    discovery.zen.ping.unicast.hosts: [&quot;10.20.250.81&quot;, &quot;10.20.250.82&quot;]</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>编辑节点2配置文件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">    cluster.name: erp-dfs</span><br><span class="line">    node.name: $&#123;HOSTNAME&#125;</span><br><span class="line">    #path.data: /esdata/data</span><br><span class="line">    #path.logs: /esdata/logs</span><br><span class="line">    network.host: 10.20.250.81</span><br><span class="line">    http.port: 9200</span><br><span class="line">    transport.tcp.port: 9300</span><br><span class="line">    bootstrap.system_call_filter: false</span><br><span class="line">    xpack.monitoring.collection.enabled: true</span><br><span class="line">    discovery.zen.ping.unicast.hosts: [&quot;10.20.250.80&quot;, &quot;10.20.250.82&quot;]</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>编辑节点3配置文件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">    cluster.name: erp-dfs</span><br><span class="line">    node.name: $&#123;HOSTNAME&#125;</span><br><span class="line">    #path.data: /esdata/data</span><br><span class="line">    #path.logs: /esdata/logs</span><br><span class="line">    network.host: 10.20.250.82</span><br><span class="line">    http.port: 9200</span><br><span class="line">    transport.tcp.port: 9300</span><br><span class="line">    bootstrap.system_call_filter: false</span><br><span class="line">    xpack.monitoring.collection.enabled: true</span><br><span class="line">    discovery.zen.ping.unicast.hosts: [&quot;10.20.250.80&quot;, &quot;10.20.250.81&quot;]</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>启动各个节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/elasticsearch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证各个节点是否正常运行<br>查看启动信息中是否包含以下信息:</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[2018-07-31T12:39:18,667][INFO ][o.e.c.s.ClusterApplierService] [sysopt-node3.novalocal] added &#123;&#123;sysopt-node1.novalocal&#125;&#123;N8IhoG11Tfia8Y52klYrqg&#125;&#123;bqqmJB2iScaV1f2rD9qCyw&#125;&#123;10.20.250.80&#125;&#123;10.20.250.80:9300&#125;&#123;ml.machine_memory=8202297344, ml.max_open_jobs=20, xpack.installed=true, ml.enabled=true&#125;,&#125;, reason: apply cluster state (from master [master &#123;sysopt-node3.novalocal&#125;&#123;adTO7mKPT32UAq9aZxY_gg&#125;&#123;0C_DuqnPReSxEZ6i2hO5Hw&#125;&#123;10.20.250.82&#125;&#123;10.20.250.82:9300&#125;&#123;ml.machine_memory=8202297344, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true&#125; committed version [15] source [zen-disco-node-join]])</span><br><span class="line">[2018-07-31T12:40:59,787][INFO ][o.e.c.s.ClusterApplierService] [sysopt-node3.novalocal] added &#123;&#123;sysopt-node2.novalocal&#125;&#123;-CHWSrLjQTOZqT3q75GVIA&#125;&#123;r93bo_kQTwOZxNZCekDsWA&#125;&#123;10.20.250.81&#125;&#123;10.20.250.81:9300&#125;&#123;ml.machine_memory=8202297344, ml.max_open_jobs=20, xpack.installed=true, ml.enabled=true&#125;,&#125;, reason: apply cluster state (from master [master &#123;sysopt-node3.novalocal&#125;&#123;adTO7mKPT32UAq9aZxY_gg&#125;&#123;0C_DuqnPReSxEZ6i2hO5Hw&#125;&#123;10.20.250.82&#125;&#123;10.20.250.82:9300&#125;&#123;ml.machine_memory=8202297344, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true&#125; committed version [16] source [zen-disco-node-join]])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp |grep 9200</span><br><span class="line">netstat -tunlp |grep 9300</span><br></pre></td></tr></table></figure>
+<pre><code>结果:
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tcp6       0      0 10.20.250.82:9200       :::*                    LISTEN      10373/java</span><br><span class="line">tcp6       0      0 10.20.250.82:9300       :::*                    LISTEN      10373/java</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">是否有输出</span><br><span class="line">curl http://10.20.250.82:9200 </span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot; : &quot;sysopt-node1.novalocal&quot;,</span><br><span class="line">&quot;cluster_name&quot; : &quot;erp-dfs&quot;,</span><br><span class="line">&quot;cluster_uuid&quot; : &quot;NclsYFudSHOgBxGHoap2yQ&quot;,</span><br><span class="line">&quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;6.3.1&quot;,</span><br><span class="line">    &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">    &quot;build_type&quot; : &quot;tar&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;eb782d0&quot;,</span><br><span class="line">    &quot;build_date&quot; : &quot;2018-06-29T21:59:26.107521Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;7.3.1&quot;,</span><br><span class="line">    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,</span><br><span class="line">    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><ol start="8">
+<li>启用守护进程</li>
+</ol>
+<blockquote>
+<p>停止各个节点服务,使用下面的命令进行守护</p>
+</blockquote>
+<pre><code>bin/elasticsearch -d -p pid
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/02/13/kafka集群配置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/kafka集群配置/" itemprop="url">kafka集群配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T15:01:13+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/kafka集群配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/13/kafka集群配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/13/kafka集群配置/" class="leancloud_visitors" data-flag-title="kafka集群配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Kafka集群配置"><a href="#Kafka集群配置" class="headerlink" title="Kafka集群配置"></a>Kafka集群配置</h2><h2 id="kafka集群需要使用到zookeeper-需要在配置kafka之前配置zookeeper"><a href="#kafka集群需要使用到zookeeper-需要在配置kafka之前配置zookeeper" class="headerlink" title="kafka集群需要使用到zookeeper,需要在配置kafka之前配置zookeeper"></a>kafka集群需要使用到zookeeper,需要在配置kafka之前配置zookeeper</h2><p>本集群里使用的主机ip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    节点1: 10.20.250.80</span><br><span class="line">    节点2: 10.20.250.81</span><br><span class="line">    节点3: 10.20.250.83</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">相关路径</span><br></pre></td></tr></table></figure>
+<pre><code>主程序:        /data/kafka
+kafka配置:     /data/kafka/server.properties
+kafka数据:     /data/kafka/kafkadata
+zookeeper配置: /data/kafka/zookeeper.properties
+zookeeper数据: /data/kafka/zkdata
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">首先下载kafka,部署中使用的版本为 ``` kafka_2.11-0.10.2.1.tgz</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /data/</span><br><span class="line">tar -zxv -f  kafka_2.11-0.10.2.1.tgz</span><br><span class="line">ln -s kafka_2.11-0.10.2.1.tgz kafka</span><br></pre></td></tr></table></figure>
+<h2 id="zookeeper-集群配置"><a href="#zookeeper-集群配置" class="headerlink" title="zookeeper 集群配置"></a>zookeeper 集群配置</h2><p>每个节点对应开放的端口有 <figure class="highlight plain"><figcaption><span>```` ``` 2888 ````  ``` 3888 ````</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. 首先确认zookeeper的数据日志目录,比如本例中使用的 ```/data/kafka/zkdata</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在3个节点上分别执行,创建目录</span><br><span class="line">mkdir -p /data/kafka/zkdata</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>生成myid</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">节点1~$ echo 1 &gt; /data/kafka/zkdata/myid  #10.20.250.80</span><br><span class="line">节点2~$ echo 2 &gt; /data/kafka/zkdata/myid  #10.20.250.81</span><br><span class="line">节点3~$ echo 3 &gt; /data/kafka/zkdata/myid  #10.20.250.83</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>生成配置文件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<pre><code>tickTime=2000
+initLimit=5
+syncLimit=2
+dataDir=/data/kafka/zkdata
+dataLogDir=/data/kafka/zkdata
+clientPort=2181
+server.1=10.20.250.80:2888:3888
+server.2=10.20.250.81:2888:3888
+server.3=10.20.250.83:2888:3888
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4. 启动服务</span><br></pre></td></tr></table></figure>
+<pre><code>分别启动各个服务器
+bin/zookeeper-server-start.sh -daemon zookeeper.properties
+测试各个节点是否端口开放
+测试是否有错误日志
+</code></pre></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">配置kafka,监听端口为 ```9092</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>节点1配置 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<pre><code>broker.id=0 
+advertised.listeners=PLAINTEXT://10.20.250.80:9092   #节点ip
+num.network.threads=3
+num.io.threads=8
+socket.send.buffer.bytes=102400
+socket.receive.buffer.bytes=102400
+socket.request.max.bytes=104857600
+log.dirs=/data/kafka/kafkadata    #kafka数据目录
+num.partitions=1
+num.recovery.threads.per.data.dir=1
+offsets.topic.replication.factor=1
+transaction.state.log.replication.factor=1
+transaction.state.log.min.isr=1
+log.retention.hours=720
+log.segment.bytes=1073741824
+log.retention.check.interval.ms=300000
+zookeeper.connect=10.20.250.80:2181,10.20.250.81:2181,10.20.250.83:2181  #配置的zookeeper节点ip+主端口号,以逗号分隔
+zookeeper.connection.timeout.ms=6000
+group.initial.rebalance.delay.ms=0
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">2. 节点2配置 ```/data/kafka/server.properties</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">broker.id=1 </span><br><span class="line">advertised.listeners=PLAINTEXT://10.20.250.81:9092   #节点ip</span><br><span class="line">num.network.threads=3</span><br><span class="line">num.io.threads=8</span><br><span class="line">socket.send.buffer.bytes=102400</span><br><span class="line">socket.receive.buffer.bytes=102400</span><br><span class="line">socket.request.max.bytes=104857600</span><br><span class="line">log.dirs=/data/kafka/kafkadata    #kafka数据目录</span><br><span class="line">num.partitions=1</span><br><span class="line">num.recovery.threads.per.data.dir=1</span><br><span class="line">offsets.topic.replication.factor=1</span><br><span class="line">transaction.state.log.replication.factor=1</span><br><span class="line">transaction.state.log.min.isr=1</span><br><span class="line">log.retention.hours=720</span><br><span class="line">log.segment.bytes=1073741824</span><br><span class="line">log.retention.check.interval.ms=300000</span><br><span class="line">zookeeper.connect=10.20.250.80:2181,10.20.250.81:2181,10.20.250.83:2181  #配置的zookeeper节点ip+主端口号,以逗号分隔</span><br><span class="line">zookeeper.connection.timeout.ms=6000</span><br><span class="line">group.initial.rebalance.delay.ms=0</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>节点3配置 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<pre><code>broker.id=2 
+advertised.listeners=PLAINTEXT://10.20.250.83:9092   #节点ip
+num.network.threads=3
+num.io.threads=8
+socket.send.buffer.bytes=102400
+socket.receive.buffer.bytes=102400
+socket.request.max.bytes=104857600
+log.dirs=/data/kafka/kafkadata    #kafka数据目录
+num.partitions=1
+num.recovery.threads.per.data.dir=1
+offsets.topic.replication.factor=1
+transaction.state.log.replication.factor=1
+transaction.state.log.min.isr=1
+log.retention.hours=720
+log.segment.bytes=1073741824
+log.retention.check.interval.ms=300000
+zookeeper.connect=10.20.250.80:2181,10.20.250.81:2181,10.20.250.83:2181  #配置的zookeeper节点ip+主端口号,以逗号分隔
+zookeeper.connection.timeout.ms=6000
+group.initial.rebalance.delay.ms=0
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">4. 启动服务器,分别在各个节点启动服务</span><br></pre></td></tr></table></figure>
+<pre><code>bin/kafka-server-start.sh -daemon server.properties
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">5. 测试</span><br></pre></td></tr></table></figure>
+<p> #测试端口是否正常开放,测试是否有异常输出<br> #创建主题<br> bin/kafka-topics.sh –create –zookeeper 10.20.250.80:2181,10.20.250.81:2181,10.20.250.83:2181  –replication-factor 1 –partitions 1 –topic test<br> #查看主题<br> bin/kafka-topics.sh –list –zookeeper 10.20.250.80:2181,10.20.250.81:2181,10.20.250.83:2181<br><code>`</code></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/02/13/linux常用命令/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/linux常用命令/" itemprop="url">linux常用命令命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T14:50:27+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/linux常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/13/linux常用命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/13/linux常用命令/" class="leancloud_visitors" data-flag-title="linux常用命令命令">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="制作linux-usb启动盘"><a href="#制作linux-usb启动盘" class="headerlink" title="制作linux usb启动盘"></a>制作linux usb启动盘</h1><h4 id="格式化u盘"><a href="#格式化u盘" class="headerlink" title="格式化u盘"></a>格式化u盘</h4><pre><code>mkfs.vfat -F 32 -n USB /dev/sdb1
+</code></pre><h4 id="安装syslinux-mtools"><a href="#安装syslinux-mtools" class="headerlink" title="安装syslinux,mtools"></a>安装syslinux,mtools</h4><pre><code>apt-get install syslinux mtools
+</code></pre><h4 id="安装linux引导"><a href="#安装linux引导" class="headerlink" title="安装linux引导"></a>安装linux引导</h4><pre><code>/usr/bin/syslinux /dev/sdb1
+</code></pre><h4 id="写入mbr"><a href="#写入mbr" class="headerlink" title="写入mbr"></a>写入mbr</h4><pre><code>cat /usr/lib/syslinux/mbr/mbr.bin &gt; /dev/sdb
+</code></pre><h4 id="配置重命名"><a href="#配置重命名" class="headerlink" title="配置重命名"></a>配置重命名</h4><pre><code>mv ioslinux.cfg syslinux.cfg
+</code></pre><h4 id="安装镜像"><a href="#安装镜像" class="headerlink" title="安装镜像"></a>安装镜像</h4><p>//TODO</p>
+<h4 id="chroot时绑定"><a href="#chroot时绑定" class="headerlink" title="chroot时绑定"></a>chroot时绑定</h4><pre><code>mount --bind /proc /mnt/proc
+mount --bind /run /mnt/run
+mount --bind /dev /mnt/dev
+mount --bind /sys /mnt/sys
+</code></pre><h4 id="获取文件魔数-判断文件类型"><a href="#获取文件魔数-判断文件类型" class="headerlink" title="获取文件魔数(判断文件类型)"></a>获取文件魔数(判断文件类型)</h4><pre><code>xxd file.png | head -n 1 | awk &apos;{print $2$3}&apos;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2019/02/13/kafka常用命令记录/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="低端程序员">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一直在路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/kafka常用命令记录/" itemprop="url">kafka常用命令记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T14:28:42+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/kafka常用命令记录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/13/kafka常用命令记录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/13/kafka常用命令记录/" class="leancloud_visitors" data-flag-title="kafka常用命令记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="kafka常用命令记录"><a href="#kafka常用命令记录" class="headerlink" title="kafka常用命令记录"></a>kafka常用命令记录</h1><h4 id="消费测试"><a href="#消费测试" class="headerlink" title="消费测试"></a>消费测试</h4><pre><code>kafka-console-consumer.bat --bootstrap-server 172.20.2.95:9092 --topic xxx --from-beginning
+</code></pre><h4 id="查看消费者"><a href="#查看消费者" class="headerlink" title="查看消费者"></a>查看消费者</h4><pre><code>kafka-consumer-groups.sh --bootstrap-server 172.20.2.95:9092 --list
+kafka-consumer-groups.sh --zookeeper 172.20.2.95:2181 --list
+</code></pre><h4 id="查看新加入的消费者"><a href="#查看新加入的消费者" class="headerlink" title="查看新加入的消费者"></a>查看新加入的消费者</h4><pre><code>kafka-consumer-groups.sh --new-consumer --bootstrap-server 172.20.2.95:9092 --list
+</code></pre><h4 id="修改分区"><a href="#修改分区" class="headerlink" title="修改分区"></a>修改分区</h4><pre><code>kafka-topics.sh --zookeeper 10.20.247.104:2181,10.20.247.105:2181,10.20.247.106:2181 --alter --topic yugong-dfs_db-ta_documents  --partitions 20
+</code></pre><h4 id="查看分区"><a href="#查看分区" class="headerlink" title="查看分区"></a>查看分区</h4><pre><code>kafka-topics.sh --zookeeper 10.20.247.104:2181,10.20.247.105:2181,10.20.247.106:2181 --topic yugong-dfs --describe
+</code></pre><h4 id="生产者压测"><a href="#生产者压测" class="headerlink" title="生产者压测"></a>生产者压测</h4><pre><code>kafka-producer-perf-test.sh --topic test_produce --num-records 100000000 --record-size 1000 --throughput 200000 --producer-props bootstrap.servers=10.20.247.104:9092,10.20.247.105:9092,10.20.247.106:9092
+</code></pre><h4 id="消费者压测"><a href="#消费者压测" class="headerlink" title="消费者压测"></a>消费者压测</h4><pre><code>kafka-consumer-perf-test.sh --zookeeper localhost:2181 --topic test_perf --fetch-size 1048576 --messages 1000000 --threads 1
+</code></pre><h4 id="增加副本"><a href="#增加副本" class="headerlink" title="增加副本"></a>增加副本</h4><pre><code>kafka-reassign-partitions.sh --zookeeper 10.20.247.104:2181,10.20.247.105:2181,10.20.247.106:2181 --reassignment-json-file replicas.json --execute
+</code></pre><h4 id="验证副本"><a href="#验证副本" class="headerlink" title="验证副本"></a>验证副本</h4><pre><code>kafka-reassign-partitions.sh --zookeeper 10.20.247.104:2181,10.20.247.105:2181,10.20.247.106:2181 --reassignment-json-file replicas.json --verify
+</code></pre><h4 id="查看消费offset"><a href="#查看消费offset" class="headerlink" title="查看消费offset"></a>查看消费offset</h4><pre><code>kafka-consumer-groups.sh --bootstrap-server 10.20.247.104:9092,10.20.247.105:9092,10.20.247.106:9092 --describe --group erp-dfs-group-id-prod-1
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/11/18/由js精度缺失引发的问题及处理方法/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="低端程序员">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="一直在路上">
     </span>
 
@@ -480,1600 +2010,11 @@ public static class IdJacksonSerializer extends StdSerializer&lt;Id&gt; {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/08/29/Gitlab和Docker实践持续集成/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/29/Gitlab和Docker实践持续集成/" itemprop="url">Gitlab和Docker实践持续集成</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-29T10:45:37+08:00">
-                2018-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/29/Gitlab和Docker实践持续集成/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/29/Gitlab和Docker实践持续集成/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/29/Gitlab和Docker实践持续集成/" class="leancloud_visitors" data-flag-title="Gitlab和Docker实践持续集成">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>本文面向那些每次发包,都是本地构建,通过奇慢无比的网络进行上传,一旦打包出错(or 没有fix bug)，还需要重新上传,无穷无尽的任务还在等着,而此刻网络成了瓶颈。又或者此刻测试人员正在测试,而你停了服务,造成测试工作无法进行,此刻的你已经是万人瞩目了,测试、项目经理已经磨刀霍霍了.就问你慌不慌?</p>
-</blockquote>
-<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><blockquote>
-<p>上面说的情况其实是程序发版,说到发版目前各个系统程序交付形式有大概分为这些: windows常见的zip,rar,msi等; Linux常见的rpm,deb等; mac常见的dmg等;java语言的有jar,war包等; 然而多种的打包形式,依赖的环境不一样,每种包也只能是在特定的环境下才能使用,这其实对运维也是一种挑战. 那么有没有一种包是各个平台都可以用，而且不用去关心目标机器环境的呢? 答案就是: docker,下面我们就结合docker,进行自动化打包, 缩短各个职能间沟通的成本.</p>
-</blockquote>
-<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><blockquote>
-<p>玩过docker的人都知道,这玩意真心好,都不用为环境操心了, 运维也只需要关心namespace和cgroups就好了，不用在去管什么rpm包,deb包,tar.gz扽等了。</p>
-</blockquote>
-<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><pre><code>Gitlab: 代码仓库, 构建工具(pipeline)
-Nexus:  maven仓库, docker register (新版Gitlab已经包含Registery)
-Docker: 容器
-Webhook: 自己写的 [Github] (https://github.com/youkale/gitlab-webhook)
-</code></pre><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><pre><code>                                                3
-                                   +-----------------------------+
-                                   |                             |
-                                   |                             |
-        +---------+   1     +------v-------+            +--------+------+
-        |         |         |              |     2      |               |
-        |  Coder  +---------&gt;    Gitlab    +------------&gt; Gitlab Runner |
-        |         |         |              |            |               |
-        +---------+         +---^----+-----+            +--------+------+
-                                |    |                           |
-                                |    |                           |
-                                |    |  +-----------------+      | 4
-                                |    |  |                 |      |
-                                |    |  | Docker Registry &lt;------+
-                                |    |  |                 |
-                                |   5|  +-------^---------+
-                               7|    |          |
-                                |    |          | 6
-                                |    |  +-------+---------+
-                                |    |  |                 |
-                                |    +--&gt; Target Server   |
-                                |       |                 |
-                                |       +-------+---------+
-                                |               |
-                                +---------------+
-
-1. 程序员push代码到gitlab，(1)
-2. Gitlab将任务分配给GitRunner，可以根据配置将执行结果(jar,js等)upload到gitlab或是打包docker镜像push到docker仓库. 也可以根据分支,tag指定构建 (2,3,4)
-3. 执行完毕后会将发送一个构建事件到你注册的Webhook里. (5)
-4. 目标服务器会装有webhook根据Gitlab事件信息拉取docker镜像,也可以从Gitlab拉去config文件或者其他的Artifacts. (6,7)
-</code></pre><blockquote>
-<p>大致的流程就是这样,Gitlab可以将各个环节需要用的Token，通过环境变量的形式添加到运行配置里面(.gitlab-ci.yml),从而避免了密钥泄露的情况.看完里这个，也许大家会在想，这个其实跟我们常用的jenkins差不多嘛，其实我安利gitlab的原因是它的一系列访问api、pipeline、webhook、artifacts、docker支持、用户友好、k8s的支持也很好.</p>
-</blockquote>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><pre><code>构建前需要准备Docker基础镜像,比如java的maven依赖镜像,golang的GOPATH镜像,js的node基础镜像
-下面java工程我用的就是maven:3.5.2-jdk-8-alpine这个镜像
-</code></pre><h2 id="构建java工程"><a href="#构建java工程" class="headerlink" title="构建java工程"></a>构建java工程</h2><pre><code>image: docker.youkale.com:18443/docker:17.12.1-ce
-services:
-  - docker.youkale.com:18443/docker:dind
-stages:
-  - build
-  - package
-variables:
-  api_version: 1.0.8-api-release
-api-build:
-  image: docker.youkale.com:18443/maven:3.5.2-jdk-8-alpine
-  stage: build
-  script:
-    - ./mvnw clean package spring-boot:repackage -DskipTests=true
-  artifacts:
-    name: &quot;$CI_JOB_NAME&quot;
-    expire_in: 1 weeks
-    paths:
-      - target/api.jar
-api-package:
-  stage: package
-  script:
-  - &quot;docker build -t docker.youkale.com:18442/api:${api_version} ./api&quot;
-  - &quot;docker login -u gitlab-ci -p ${nexus_docker_password} docker.youkale.com:18442&quot;
-  - &quot;docker push docker.youkale.com:18442/api:${api_version}&quot;
-
-说明:
-    image: 执行本次构建使用的image
-    stages: 执行本次构建的顺序, build,package
-    variables: 环境变量
-    api-build: 自定义构建名称,会定义构建的策略.上传到artifacts会以这个命名.同样的webhook收到的事件也会包含此构建的名字,以及其他git相关的信息.我们根据这个信息进行应用的部署.
-    ${nexus_docker_password}: 通过gitlab在运行的时候设置
-</code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code>webhook配置: https://raw.githubusercontent.com/youkale/gitlab-webhook/master/README.md
-nexus docker仓库配置: 难度倒是没有，需要(hosted,proxy,group), 但是还是走了不少弯路，比如docker login有问题等,不过最后也还是解决了.
-gitlab-runner: Settings -&gt; CI/CD -&gt; Runners
-gitlab-webhook: Settings -&gt; Integrations
-分支、tag保护: Settings -&gt; Repository
-</code></pre><blockquote>
-<p>gitlab构建部分的功能基本说说完了,每个地方还有不少细节,当我们实际用到的时候，我们可以结合gitlab详细的文档进行参考配置.</p>
-</blockquote>
-<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><pre><code>1. private-token问题:
-当使用官方gitlab的时候private-token在头部，而且全部大写，当使用gitlab-ce版的时候，private-token为首字母大写Private-Token(没记错的话)
-例子: curl -XGET -L --header \&quot;PRIVATE-TOKEN: ${gitlab_artifact_token}\&quot; &apos;https://gitlab.com/youkale/kakaka/-/jobs/artifacts/master/raw/dist/index.html?job=node-build&apos; -o src/main/resources/templates/index.html
-2. 用这种模式构建，java工程的话不太推荐父子工程(本人主要用java)，当两个子工程都需要构建的时候，会不太舒服，虽然说这个方案也行
-</code></pre><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><blockquote>
-<p>通过这种方式，我想开发乐呵呵，测试乐呵呵，运维乐呵呵. 大家都不用那么痛苦了.而且可玩的方式也很多，不一定需要k8s，对于小于20个docker的项目我觉得还可以结合docker-compose来部署.也不需要每一个新环境花费一天半天的时间来搭建.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/08/26/IntelliJ IDEA的Tips贼好用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/26/IntelliJ IDEA的Tips贼好用/" itemprop="url">IntelliJ IDEA的Tips贼好用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-26T13:54:43+08:00">
-                2018-08-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/26/IntelliJ IDEA的Tips贼好用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/26/IntelliJ IDEA的Tips贼好用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/26/IntelliJ IDEA的Tips贼好用/" class="leancloud_visitors" data-flag-title="IntelliJ IDEA的Tips贼好用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="废话"><a href="#废话" class="headerlink" title="废话"></a>废话</h1><blockquote>
-<p>IntelliJ IDEA功能强大,用过得到的朋友也都知道,可能你认为一个新的工具同样的也会带来相应的学习成本。其实没有想象的那么复杂，只要关心idea给你提示的黄色警告即可， 然后用 alt + enter 使用更好的方式重构即可. 本文没有上面实质内容，只是在安利大家用IDEA, 把代码写好，少加班</p>
-</blockquote>
-<h2 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h2><p>转换前</p>
-<pre><code>ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.submit(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(&quot;xxx&quot;);
-            }
-        });
-</code></pre><p>转换后</p>
-<pre><code>public void runJob() {
-    ExecutorService executorService = Executors.newCachedThreadPool();
-    executorService.submit(() -&gt; System.out.println(&quot;xxx&quot;));
-}
-</code></pre><h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p>转换前</p>
-<pre><code>public boolean contains(List&lt;Person&gt; ps) {
-    return ps.stream().filter(s -&gt; s.getName().equals(&quot;youkale&quot;)).findAny().isPresent();
-}
-</code></pre><p>转换后</p>
-<pre><code>public boolean contains(List&lt;Person&gt; ps) {
-    return ps.stream().anyMatch(s -&gt; s.getName().equals(&quot;youkale&quot;));
-}
-</code></pre><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>转换前</p>
-<pre><code>try{
-    ....
-    }catch (IOException ioe){
-
-    }catch (FileNotFoundException fe){
-
-    }
-</code></pre><p>转换后</p>
-<pre><code>try{
-
-}catch(IOException | FileNotFoundException e){
-
-}
-</code></pre><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><blockquote>
-<p>还是要强调: 只要关注IDEA给你警告，即使你想把代码写得像一坨屎，它也能帮你找出问题所在，然后给你警告,然后提示,最后还直接帮你把代码改好。 再安利一个快捷键 F2, 帮你查找错误和警告</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/08/24/vim-学习笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/24/vim-学习笔记/" itemprop="url">vim 学习笔记(持续更新)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-24T10:37:12+08:00">
-                2018-08-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/24/vim-学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/24/vim-学习笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/24/vim-学习笔记/" class="leancloud_visitors" data-flag-title="vim 学习笔记(持续更新)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Vim学习笔记"><a href="#Vim学习笔记" class="headerlink" title="Vim学习笔记"></a>Vim学习笔记</h1><blockquote>
-<p>几乎每次管理服务器的时候或多或少得接触到vim，一直都觉得他很复杂，只会简单的打开文件，修改，保存, 终于在最近项目不太忙的时候，沉寂心来认真学习了一把，收益还是蛮大的，出乎意料得高效. 其实认真学起来vim不是想象中的那么难.只是要多练习就好. 于是乎我把学习的笔记整理了一下，发出来，以后有学到新姿势也更新上来.</p>
-</blockquote>
-<h2 id="操作说明约定"><a href="#操作说明约定" class="headerlink" title="操作说明约定"></a>操作说明约定</h2><pre><code>&lt;num&gt; :  表示数字
-&lt;char&gt; : 表示字符
-&lt;C&gt; : 表示control键
-{} : 表示可选择
-</code></pre><h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><pre><code>set nu: 显示行号
-set relativenumber: 显示相对行号
-</code></pre><h2 id="单词操作"><a href="#单词操作" class="headerlink" title="单词操作"></a>单词操作</h2><pre><code>w: 下一个单词首部
-b: 上一个单词首部
-e: 下一个单词尾部
-</code></pre><h2 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h2><pre><code>h: 左下上右
-^: 光标移动到行首非空白字符
-0: 光标移动到行首
-$: 光标移动到行尾
-g: 光标移动到行尾非空白字符处
-&lt;: x次 左下上右移动
-&lt;: 到x行首
-g: 到第一行
-G: 到行尾
-): 下一个句子
-(: 上一个句子
-M: 光标移动到屏幕中央
-H: 光标移动到屏幕上方
-L: 光标移动到屏幕下方
-z: 当前行移动到屏幕中央
-z: 当前行移动到屏幕上方
-z: 当前行移动到屏幕下方
-f: 光标移动到下一个&lt;char&gt;处
-&lt;: 光标移动到第&lt;num&gt;个字符
-t: 光标移动到下一个&lt;char&gt;左侧
-&lt;: 光标移动到第&lt;num&gt;个&lt;char&gt;左侧
-%: 切换到下一个 {,[,( 处
-{: 向{下，上}查找当前光标单词
-</code></pre><h2 id="行为"><a href="#行为" class="headerlink" title="行为"></a>行为</h2><pre><code>r: 替换当前字符
-x: 删除当前光标字符
-s: 类似x,进入编辑模式
-c: 剪切操作，并进入编辑模式
-v: 行内选择
-d: 删除操作
-y: 复制
-p: 粘帖
-g: 搜索(不一定正确)
-</code></pre><h2 id="组合动作"><a href="#组合动作" class="headerlink" title="组合动作"></a>组合动作</h2><pre><code>行为 + 次数(可以省略) + 范围描述 + 文本对象
-行为:  d,c,y,v等
-范围描述：i,a,t,f
-文本对象:
-p: 段落
-s: 句子
-w: 单词
-t: tag
-举例:
-
-ve 选择到单词结尾
-vf2: 当前位置查找到第二个&quot;:&quot;
-cw 剪切当前单词
-dt: 从当前位置删除到&quot;:&quot;
-gd 跳转掉变量定义
-gUe 当前位置到单词结尾转化为小写,同样适用于w,b
-gue 当前位置到单词结尾转化为小写
-gUU 当前行转换为大写
-guu 当前行转换为小写
-</code></pre><h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><pre><code>录制: 使用qa,定义名字为a的宏(存放的寄存器)，接下来可以录入一些操作，录入完成后，按q结束
-回放: 1@a ,表示回放1次, @@ 回放最新录制的宏
-</code></pre><h2 id="窗口操作"><a href="#窗口操作" class="headerlink" title="窗口操作"></a>窗口操作</h2><pre><code>:split: 水平分割
-:vsplit: 垂直分割
-&lt;C-w&gt;{hjkl}: 窗口切换
-&lt;C-w&gt;{-,+,_}: 缩小,放大,最大
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/08/12/redis-distributed-lock/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/12/redis-distributed-lock/" itemprop="url">重谈redis分布式锁</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-12T16:58:39+08:00">
-                2018-08-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/12/redis-distributed-lock/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/12/redis-distributed-lock/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/12/redis-distributed-lock/" class="leancloud_visitors" data-flag-title="重谈redis分布式锁">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  Redis分布式锁其实网上已经一大把了，我写这篇博客的目的是想发表下自己的浅见。</p>
-<p>  我们知道在单进程中，通过语言内置的锁可以保证数据的一致性，随着软件的不断扩大，很多应用已经是多进程的方式部署,那么为了保证数据的一致性,我们需要一个分布式锁。标题说的是Redis分布式锁，那么我下面主要讲的rendis锁，而且不会涉及到redis单点故障的问题。</p>
-<h3 id="常见的分布锁"><a href="#常见的分布锁" class="headerlink" title="常见的分布锁"></a>常见的分布锁</h3><p>  搜索一下常见的分布式锁说的都是通过redis和zookeeper来实现。</p>
-<ul>
-<li><p>redis</p>
-<blockquote>
-<p>setnx 通过设置一个共有的key，而且通过设置过期时间来避免死锁</p>
-</blockquote>
-</li>
-<li><p>zk</p>
-<blockquote>
-<p>通过设置一个共有的节点,通过zk的watch,观察节点的变化进行通知</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="锁的需求"><a href="#锁的需求" class="headerlink" title="锁的需求"></a>锁的需求</h3><ul>
-<li><p>独占: 一个时间点只能一个线程访问</p>
-</li>
-<li><p>可重入: 同一个线程只要当前持有锁，可以重复进入</p>
-</li>
-<li><p>避免死锁: 多个线程访问不会出现死锁的情况</p>
-</li>
-<li><p>锁释放: 进程故障能自动释放锁，只有持有锁的进程能释放锁</p>
-</li>
-</ul>
-<h3 id="尝试自己实现一个"><a href="#尝试自己实现一个" class="headerlink" title="尝试自己实现一个"></a>尝试自己实现一个</h3><blockquote>
-<p>实现 copy from importnew <a href="http://www.importnew.com/27477.html" target="_blank" rel="noopener">Redis 分布式锁的正确实现方式（ Java 版 ）</a></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class RedisTool &#123;</span><br><span class="line"> </span><br><span class="line">    private static final String LOCK_SUCCESS = <span class="string">"OK"</span>;</span><br><span class="line">    private static final String SET_IF_NOT_EXIST = <span class="string">"NX"</span>;</span><br><span class="line">    private static final String SET_WITH_EXPIRE_TIME = <span class="string">"PX"</span>;</span><br><span class="line"> </span><br><span class="line">    public static boolean tryGetDistributedLock(Jedis jedis, String lockKey, String requestId, int expireTime) &#123;</span><br><span class="line"> </span><br><span class="line">        String result = jedis.set(lockKey, requestId, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (LOCK_SUCCESS.equals(result)) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static final Long RELEASE_SUCCESS = 1L;</span><br><span class="line"> </span><br><span class="line">    public static boolean releaseDistributedLock(Jedis jedis, String lockKey, String requestId) &#123;</span><br><span class="line"> </span><br><span class="line">        String script = <span class="string">"if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end"</span>;</span><br><span class="line">        Object result = jedis.eval(script, Collections.singletonList(lockKey), Collections.singletonList(requestId));</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (RELEASE_SUCCESS.equals(result)) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<blockquote>
-<p>上面的锁实现存在一个问题,假如程序员A不小心调用了releaseDistributedLock就会把某个已经持有锁的线程的锁释放掉。相信大家都能想到用ThreadLocal方式避免给未持有锁的线程释放了。 那我就试着将这代码改改。(伪代码)</p>
-</blockquote>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"> public class RedisToolv2 &#123;</span><br><span class="line"> </span><br><span class="line">    private static final String LOCK_SUCCESS = <span class="string">"OK"</span>;</span><br><span class="line">    private static final String SET_IF_NOT_EXIST = <span class="string">"NX"</span>;</span><br><span class="line">    private static final String SET_WITH_EXPIRE_TIME = <span class="string">"PX"</span>;</span><br><span class="line">    private final ThreadLocal&lt;Boolean&gt; hasLock = new ThreadLocal&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    public static boolean tryGetDistributedLock(Jedis jedis, String lockKey, String requestId, int expireTime) &#123;</span><br><span class="line"> </span><br><span class="line">        String result = jedis.set(lockKey, requestId, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);</span><br><span class="line">        </span><br><span class="line">        boolean locked = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (LOCK_SUCCESS.equals(result)) &#123;</span><br><span class="line">            locked = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        hasLock.set(locked);</span><br><span class="line">        <span class="built_in">return</span> locked;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static final Long RELEASE_SUCCESS = 1L;</span><br><span class="line"> </span><br><span class="line">    public static boolean releaseDistributedLock(Jedis jedis, String lockKey, String requestId) &#123;</span><br><span class="line">        boolean locked = Optional.ofNull(hasLock.get()).orElse(<span class="literal">false</span>) ;</span><br><span class="line">        boolean unloked = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(locked)&#123;</span><br><span class="line">            String script = <span class="string">"if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end"</span>;</span><br><span class="line">            Object result = jedis.eval(script, Collections.singletonList(lockKey), Collections.singletonList(requestId));</span><br><span class="line">            <span class="keyword">if</span> (RELEASE_SUCCESS.equals(result)) &#123;</span><br><span class="line">                unloked = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p> 上面的方式虽然说解决了其他线程误删锁的情况，但是分布式锁其实还有很多细节都地方需要实现，当一个线程已经拥有此锁了，如果还有大量其他(本应用或其他应用)的线程在请求锁，无疑给redis造成很大的压力(当然这个得看应用的规模，小规模是不会出现这个情况)。</p>
-<blockquote>
-<p>假设我们同一个应用中同一个时间点只有线程在请求分布式锁，那么相对于Redis的压力是不是就会下降很多? 那么我们在代码中加入一个同步锁是不是就解决了问题呢？首先我想到的是synchronized可以重入，可以使用递归的方式调用。但是如果是递归，如果长时间拿不到锁，那么有可能会引发StackOverflowError。额， 那这不能实现，没招了咩？ 其实jdk里面带了一个 ReentrantLock,这个锁其实跟synchronized差不多，也是可以重入的，而且有一个 tryLock(long timeout, TimeUnit unit)的方法，在递归调用的时候可以避免Stack过大。 （思路有了，我相信代码也是很轻易就写出来了）</p>
-</blockquote>
-<h3 id="抛个砖"><a href="#抛个砖" class="headerlink" title="抛个砖"></a>抛个砖</h3><ul>
-<li><p>那么这个锁持有的时间该如何计算呢？ </p>
-</li>
-<li><p>还有就是这么实现这个锁是不是就完美了呢？？  </p>
-</li>
-<li><p>Redis有个叫<a href="http://redisdoc.com/topic/notification.html" target="_blank" rel="noopener">键空间通知(keyspace notification)</a> 的功能，是不是可以用这种方式来实现一个类似zookeeper的锁呢 ？ </p>
-</li>
-</ul>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>各位看官还有什么好的思路欢迎来交流呀。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2018/01/13/url-Value-cast-struct/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/13/url-Value-cast-struct/" itemprop="url">url.Values转换struct</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T15:36:00+08:00">
-                2018-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/13/url-Value-cast-struct/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/13/url-Value-cast-struct/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/01/13/url-Value-cast-struct/" class="leancloud_visitors" data-flag-title="url.Values转换struct">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>大家在写golang http服务的时候或许会碰到Request中url.Values转换成struct的需要。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>翻开net.url查看url.Values的定义</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> Values map[string][]string</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>那么我是不是可以通过遍历struct的Field获取对应的数据类型，以及通过tag来从url.Values中获取对应的参数？<br>答案是可以的，那么我们就开动吧。</p>
-</blockquote>
-<ul>
-<li>先来定义一个struct,还有一个叫param的tag。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> User struct &#123;</span><br><span class="line">     UserId int  `param:<span class="string">"user_id,100"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>struct说明</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字段名:  UserId</span><br><span class="line">url.Values中的字段名:  user_id</span><br><span class="line">默认值: 100</span><br></pre></td></tr></table></figure>
-<ul>
-<li>实现</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    typ := val.Type()</span><br><span class="line">	<span class="keyword">for</span> i := 0; i &lt; val.NumField(); i++ &#123;</span><br><span class="line">		kt := typ.Field(i) //获取字段类型</span><br><span class="line">		tag := kt.Tag.Get(<span class="string">"param"</span>) //获取tag</span><br><span class="line">                sv := val.Field(i) //获取字段值</span><br><span class="line">		uv := getVal(values, tag) //获取默认值</span><br><span class="line">               switch sv.<span class="function"><span class="title">Kind</span></span>() &#123;</span><br><span class="line">		<span class="keyword">case</span> reflect.String:</span><br><span class="line">			....</span><br><span class="line">		<span class="keyword">case</span> reflect.Bool:</span><br><span class="line">		        ....</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goos: linux</span><br><span class="line">goarch: amd64</span><br><span class="line">pkg: github.com/youkale/go-querystruct/params</span><br><span class="line">2000000000	         0.00 ns/op</span><br><span class="line">PASS</span><br></pre></td></tr></table></figure>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>好了，思路基本上是这样的,具体实现细节请参考</p>
-<p><a href="https://github.com/youkale/go-querystruct" target="_blank" rel="noopener">GitHub源码地址</a> </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2017/05/20/Array-memory-allocation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/20/Array-memory-allocation/" itemprop="url">数组内存分配</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-20T18:55:00+08:00">
-                2017-05-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/20/Array-memory-allocation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/05/20/Array-memory-allocation/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/05/20/Array-memory-allocation/" class="leancloud_visitors" data-flag-title="数组内存分配">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="废话"><a href="#废话" class="headerlink" title="废话"></a>废话</h3><p>  今天是所谓的520，高富帅此刻正在xxx，我等屌丝在写博客，悲哀呀。。</p>
-<h3 id="如题"><a href="#如题" class="headerlink" title="如题"></a>如题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> //定义一个容量为5,长度为4的数组</span><br><span class="line">slice := [5]int&#123;10, 20, 30, 40&#125;</span><br><span class="line"></span><br><span class="line">//cap = 5 - 1</span><br><span class="line">//len = 3 -1</span><br><span class="line">//一个新的切片</span><br><span class="line">newSlice := slice[1:3]</span><br><span class="line"></span><br><span class="line">//增加两个元素</span><br><span class="line">      //这些操作其实是在原有的数组上进行操作</span><br><span class="line">     //因为cap都在这个原有的数组范围内</span><br><span class="line">newSlice = append(newSlice, 50, 60)</span><br><span class="line"></span><br><span class="line">fmt.Printf(&quot;slice cap %d len %d, newSlice cap %d len %d \n&quot;, cap(slice), len(slice), cap(newSlice), len(newSlice))</span><br><span class="line"></span><br><span class="line">//遍历并打印出指针地址</span><br><span class="line">for i1, v1 := range slice &#123;</span><br><span class="line">	fmt.Println(i1, v1, &amp;slice[i1])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fmt.Printf(&quot;slice cap %d len %d, newSlice cap %d len %d \n&quot;, cap(slice), len(slice), cap(newSlice), len(newSlice))</span><br><span class="line">//遍历并打印出指针地址</span><br><span class="line">for i2, v2 := range newSlice &#123;</span><br><span class="line">	fmt.Println(i2, v2, &amp;newSlice[i2])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//重新增加元素</span><br><span class="line">      //此时已经超出了原有的数组容量，那么会重新copy数组</span><br><span class="line">     //所以在性能要求高的场景谨慎使用append</span><br><span class="line"></span><br><span class="line">newSlice = append(newSlice, 20, 60, 90)</span><br><span class="line"></span><br><span class="line">fmt.Printf(&quot;slice cap %d len %d, newSlice cap %d len %d \n&quot;, cap(slice), len(slice), cap(newSlice), len(newSlice))</span><br><span class="line">//遍历并打印出指针地址</span><br><span class="line">for i3, v3 := range newSlice &#123;</span><br><span class="line">	fmt.Println(i3, v3, &amp;newSlice[i3])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">slice cap 5 len 5, newSlice cap 4 len 4 </span><br><span class="line">0 10 0xc820012270</span><br><span class="line">1 20 0xc820012278</span><br><span class="line">2 30 0xc820012280</span><br><span class="line">3 50 0xc820012288</span><br><span class="line">4 60 0xc820012290</span><br><span class="line">slice cap 5 len 5, newSlice cap 4 len 4 </span><br><span class="line">0 20 0xc820012278</span><br><span class="line">1 30 0xc820012280</span><br><span class="line">2 50 0xc820012288</span><br><span class="line">3 60 0xc820012290</span><br><span class="line">slice cap 5 len 5, newSlice cap 8 len 7 </span><br><span class="line">0 20 0xc820016340</span><br><span class="line">1 30 0xc820016348</span><br><span class="line">2 50 0xc820016350</span><br><span class="line">3 60 0xc820016358</span><br><span class="line">4 20 0xc820016360</span><br><span class="line">5 60 0xc820016368</span><br><span class="line">6 90 0xc820016370</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2016/10/28/Jetty-embedded-development-path-problem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/28/Jetty-embedded-development-path-problem/" itemprop="url">Jetty嵌入开发路径问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-28T13:32:00+08:00">
-                2016-10-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/28/Jetty-embedded-development-path-problem/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/10/28/Jetty-embedded-development-path-problem/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/10/28/Jetty-embedded-development-path-problem/" class="leancloud_visitors" data-flag-title="Jetty嵌入开发路径问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>我都知道在使用jetty在嵌入开发的时候使用ContextHandler，通过 setContextPath设置访问路径，通过setHandler来使用自定义的handler.最终设置到Server中，服务就可以跑起来了。</p>
-</blockquote>
-<h3 id="官方的栗子"><a href="#官方的栗子" class="headerlink" title="官方的栗子"></a>官方的栗子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Server server = new Server(8080);</span><br><span class="line"> ContextHandler context = new ContextHandler(&quot;/&quot;);</span><br><span class="line"> context.setContextPath(&quot;/&quot;);</span><br><span class="line"> context.setHandler(new HelloHandler(&quot;Root Hello&quot;));</span><br><span class="line"></span><br><span class="line"> ContextHandler contextFR = new ContextHandler(&quot;/fr&quot;);</span><br><span class="line"> contextFR.setHandler(new HelloHandler(&quot;Bonjoir&quot;));</span><br><span class="line"></span><br><span class="line"> ContextHandler contextIT = new ContextHandler(&quot;/it&quot;);</span><br><span class="line"> contextIT.setHandler(new HelloHandler(&quot;Bongiorno&quot;));</span><br><span class="line"></span><br><span class="line"> ContextHandler contextV = new ContextHandler(&quot;/&quot;);</span><br><span class="line"> contextV.setVirtualHosts(new String[] &#123; &quot;127.0.0.2&quot; &#125;);</span><br><span class="line"> contextV.setHandler(new HelloHandler(&quot;Virtual Hello&quot;));</span><br><span class="line"> contextV.setInitParameter(&quot;dirAllowed&quot;, &quot;false&quot;);</span><br><span class="line"></span><br><span class="line"> ContextHandlerCollection contexts = new ContextHandlerCollection();</span><br><span class="line"> contexts.setHandlers(new Handler[] &#123; context, contextFR, contextIT,</span><br><span class="line">         contextV &#125;);</span><br><span class="line"></span><br><span class="line"> server.setHandler(contexts);</span><br><span class="line"></span><br><span class="line"> server.start();</span><br><span class="line"> server.join();</span><br></pre></td></tr></table></figure>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>细心的朋友可能在使用中发现，明明我定义的路径是/user ,但是在访问的时候却进行了一次302跳转，然后最终变成了/user/ ,经过调试发现,在ContextHandler这个类中发现下面这个有趣的问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// Are we not the root context?</span><br><span class="line">// redirect null path infos</span><br><span class="line"><span class="keyword">if</span> (!_allowNullPathInfo &amp;&amp; _contextPath.length() == target.length() &amp;&amp; _contextPath.length()&gt;1)</span><br><span class="line">&#123;</span><br><span class="line">    // context request must end with /</span><br><span class="line">    baseRequest.setHandled(<span class="literal">true</span>);</span><br><span class="line">    <span class="keyword">if</span> (baseRequest.getQueryString() != null)</span><br><span class="line">        response.sendRedirect(URIUtil.addPaths(baseRequest.getRequestURI(),URIUtil.SLASH) + <span class="string">"?"</span> + baseRequest.getQueryString());</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        response.sendRedirect(URIUtil.addPaths(baseRequest.getRequestURI(),URIUtil.SLASH));</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注释已经写了,context request must end with /<br>原来jetty会自动得帮你把在请求后面加一个/  ，然后再跳转到你的路径上面,于是  /user 的访问就变成了 /user/</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p> 那么如何解决这个问题呢？很简单，只需要调用 setAllowNullPathInfo 这个方法，并且设置为 true 即可<br>那么jetty 路径自动增加/的问题，也就是jetty自动302的问题就算解决啦!!</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2016/10/03/openwrt-dns/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/03/openwrt-dns/" itemprop="url">openwrt简单的dns方案</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-03T14:05:00+08:00">
-                2016-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/03/openwrt-dns/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/10/03/openwrt-dns/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/10/03/openwrt-dns/" class="leancloud_visitors" data-flag-title="openwrt简单的dns方案">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ol>
-<li>环境 </li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NETGEAR WNDR3700v4</span><br><span class="line">OpenWrt Chaos Calmer 15.05.1 / LuCI 15.05-149-g0d8bbd2 Release (git-15.363.78009-956be55)</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>准备软件</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnscrypt-proxy</span><br></pre></td></tr></table></figure>
-<h3 id="安装-dnscrypt-proxy"><a href="#安装-dnscrypt-proxy" class="headerlink" title="安装 dnscrypt-proxy"></a>安装 dnscrypt-proxy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ opkg update</span><br><span class="line">$ opkg install dnscrypt-proxy</span><br><span class="line">```     </span><br><span class="line"></span><br><span class="line">简单不？</span><br><span class="line">     </span><br><span class="line"><span class="comment">### 配置/etc/config/dnscrypt-proxy</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">config dnscrypt-proxy</span><br><span class="line">	option address <span class="string">'127.0.0.1'</span></span><br><span class="line">	option port <span class="string">'5553'</span></span><br><span class="line">	<span class="comment"># option resolver 'opendns'</span></span><br><span class="line">	option resolvers_list <span class="string">'/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv'</span></span><br></pre></td></tr></table></figure>
-<p>开机运行&amp;启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/dnscrypt-proxy <span class="built_in">enable</span></span><br><span class="line">/etc/init.d/dnscrypt-proxy start</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>一般openwrt 会使用dnsmasq作为dns和dhcp服务，所以这里也得该<br>编辑/etc/config/dhcp</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">config dnsmasq</span><br><span class="line">	option domainneeded <span class="string">'1'</span></span><br><span class="line">	option boguspriv <span class="string">'1'</span></span><br><span class="line">	option filterwin2k <span class="string">'1'</span></span><br><span class="line">	option localise_queries <span class="string">'1'</span></span><br><span class="line">	option rebind_protection <span class="string">'1'</span></span><br><span class="line">	option rebind_localhost <span class="string">'1'</span></span><br><span class="line">	option <span class="built_in">local</span> <span class="string">'/lan/'</span></span><br><span class="line">	option domain <span class="string">'lan'</span></span><br><span class="line">	option expandhosts <span class="string">'1'</span></span><br><span class="line">	option nonegcache <span class="string">'0'</span></span><br><span class="line">	option authoritative <span class="string">'1'</span></span><br><span class="line">	option readethers <span class="string">'1'</span></span><br><span class="line">	option leasefile <span class="string">'/tmp/dhcp.leases'</span></span><br><span class="line">	<span class="comment">#option resolvfile '/tmp/resolv.conf.auto'  </span></span><br><span class="line">	option noresolv  1</span><br><span class="line">    	list server	<span class="string">'127.0.0.1#5553'</span></span><br><span class="line">    	list server	<span class="string">'/pool.ntp.org/208.67.222.222'</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>option resolvfile 这个是ISP的解析信息,污染源</li>
-<li>option noresolv 禁止使用这个 /etc/resolv.conf 文件的dns服务列表</li>
-<li>list server 使用上面我们定义的ndscrypt服务</li>
-<li>list server /pool.ntp.org/208.67.222.222 因为DNScrypt需要准确的时间，所以需要这个时间服务器</li>
-</ul>
-<p>配置基本上完成了，重启下dnsmasq，客户端需要刷新下dhcp信息,如果不知道就重启机器是最简单的啦。</p>
-<h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ logread</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Mon Oct  3 13:40:16 2016 daemon.notice dnscrypt-proxy[1692]: Proxying from 127.0.0.1:5553 to 222.222.220.220:443</span><br><span class="line">Mon Oct  3 13:46:40 2016 daemon.info hostapd: wlan0: STA 11:11:11:11:18:60 WPA: group key handshake completed (RSN)</span><br><span class="line">Mon Oct  3 13:46:40 2016 daemon.info hostapd: wlan0: STA 11:11:11:11:18 WPA: group key handshake completed (RSN)</span><br><span class="line">Mon Oct  3 13:46:40 2016 daemon.info hostapd: wlan0: STA 11:11:11:11:18 WPA: group key handshake completed (RSN)</span><br><span class="line">Mon Oct  3 13:46:40 2016 daemon.info hostapd: wlan0: STA 11:11:11:11:18 WPA: group key handshake completed (RSN)</span><br><span class="line">Mon Oct  3 13:56:40 2016 daemon.info hostapd: wlan0: STA 11:11:11:11:18 WPA: group key handshake completed (RSN)</span><br><span class="line">Mon Oct  3 13:56:40 2016 daemon.info hostapd: wlan0: STA 11:11:11:11:18 WPA: group key handshake completed (RSN)</span><br><span class="line">Mon Oct  3 13:56:40 2016 daemon.info hostapd: wlan0: STA 11:11:11:11:18 WPA: group key handshake completed (RSN)</span><br><span class="line">Mon Oct  3 13:56:40 2016 daemon.info hostapd: wlan0: STA 11:11:11:11:18 WPA: group key handshake completed (RSN)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>有不足或者不正确的地方还希望指点。</p>
-</blockquote>
-<p>设备支持列表<a href="https://wiki.openwrt.org/toh/start" target="_blank" rel="noopener">Openwrt</a><br>参考<a href="https://wiki.openwrt.org/inbox/dnscrypt" target="_blank" rel="noopener">Openwrt</a><br>参考<a href="https://dnscrypt.org/#public-resolvers" target="_blank" rel="noopener">DNSCrypt</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youkale.github.io/2016/06/22/How-to-read-the-stream-gracefully/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="低端程序员">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一直在路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/22/How-to-read-the-stream-gracefully/" itemprop="url">如何优雅的读取流</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-22T23:50:00+08:00">
-                2016-06-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/06/22/How-to-read-the-stream-gracefully/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/06/22/How-to-read-the-stream-gracefully/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/06/22/How-to-read-the-stream-gracefully/" class="leancloud_visitors" data-flag-title="如何优雅的读取流">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Java中关于InputStream读取很多人立马就想到下面的写法:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">InputStream inputStream = null;</span><br><span class="line">InputStreamReader reader = null;</span><br><span class="line">BufferedReader bufferedReader = null;</span><br><span class="line">try &#123;</span><br><span class="line">    inputStream = new FileInputStream(<span class="string">"/home/0x1024/1024.txt"</span>);</span><br><span class="line">    reader = new InputStreamReader(inputStream);</span><br><span class="line">    bufferedReader = new BufferedReader(reader);</span><br><span class="line">    String temp;</span><br><span class="line">    StringBuilder sb = new StringBuilder();</span><br><span class="line">    <span class="keyword">while</span> (null != (temp = bufferedReader.readLine())) &#123;</span><br><span class="line">        sb.append(temp);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.print(sb.toString());</span><br><span class="line">&#125; catch (IOException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">    <span class="keyword">if</span> (null != inputStream)&#123;</span><br><span class="line">        inputStream.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (null != reader)&#123;</span><br><span class="line">        reader.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (null != bufferedReader)&#123;</span><br><span class="line">        bufferedReader.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>下面这几个类都实现了Closeable,所以读取完毕后都需要关闭。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">InputStream inputStream</span><br><span class="line">InputStreamReader reader;</span><br><span class="line">BufferedReader bufferedReader;</span><br></pre></td></tr></table></figure>
-<p>最终读取成功失败与否，还需要将这个流关闭掉,然后又是一陀臃肿的代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (null != inputStream)&#123;</span><br><span class="line">    inputStream.close();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (null != reader)&#123;</span><br><span class="line">    reader.close();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (null != bufferedReader)&#123;</span><br><span class="line">    bufferedReader.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>很多朋友估计每天都在承受这样的痛苦，不过自从JDK7发布以来，Closeable接口扩展了一个叫AutoCloseable的接口.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Closeable extends AutoCloseable &#123;    </span><br><span class="line">        void close() throws IOException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>那么上面的这个文件读取可以很C#地写出:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">try (InputStream inputStream = new FileInputStream(<span class="string">"/home/0x1024/1024.txt"</span>);</span><br><span class="line">        InputStreamReader reader = new InputStreamReader(inputStream);</span><br><span class="line">        BufferedReader bufferedReader = new BufferedReader(reader)) &#123;</span><br><span class="line">       String temp;</span><br><span class="line">       StringBuilder sb = new StringBuilder();</span><br><span class="line">       <span class="keyword">while</span> (null != (temp = bufferedReader.readLine())) &#123;</span><br><span class="line">           sb.append(temp);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.print(sb.toString());</span><br><span class="line">   &#125;catch (IOException e)&#123;</span><br><span class="line">       e.printStackTrace();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>这样就完了吗???现在都已经JDK8了, 好的常用类都扩展了Steam,比如BufferedReader,有一个public Stream<string> lines()方法,那么上面的的代码就可以更优雅了.</string></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try (InputStream inputStream = new FileInputStream(<span class="string">"/home/0x1024/1024.txt"</span>);</span><br><span class="line">         InputStreamReader reader = new InputStreamReader(inputStream);</span><br><span class="line">         BufferedReader bufferedReader = new BufferedReader(reader)) &#123;</span><br><span class="line">        System.out.println(bufferedReader.lines().collect(Collectors.joining()));</span><br><span class="line">    &#125;catch (IOException e)&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>是的，你没看错。。。就那么点代码了！！！</p>
-<p>只要你的jdk是7以上，只要实现了Closeable就可以用 try(…){…} 的方式撸代码了.</p>
-<h3 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h3><p>更偷懒的朋友可能会这样写:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(<span class="string">"/home/0x1024/1024.txt"</span>)))) &#123;</span><br><span class="line">    System.out.println(bufferedReader.lines().collect(Collectors.joining()));</span><br><span class="line">&#125;catch (IOException e)&#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>那么我告诉你，这样写是不正确的，详情请阅读:《JAVA程序员修炼之道》</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2106,7 +2047,7 @@ guu 当前行转换为小写
 
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">低端程序员</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -2119,7 +2060,7 @@ guu 当前行转换为小写
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2169,7 +2110,7 @@ guu 当前行转换为小写
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
